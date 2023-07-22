@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Burger Bomb - Contact Us</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	
+	<style>
+	form {
+	width:80%;
+	margin: 0 auto;
+	}
+	input, textarea, select {
+	display: block;
+	/* background-color: #ff4500 */
+	background-color: rgba(255, 69, 0, 0.5);
+	border-radius: 15px;
+	border: 2px solid #4b0082;
+	font-family: "Times New Roman", Times, serif;
+	}
+	input[type=radio], input[type=checkbox] {
+	padding: 5px;
+	display: inline-block;
+	width: 50px;
+	}
+	input[type=number] {
+	/* background-color: #4B0082 */
+	background-color: rgba(75, 0, 130, 0.5);
+	}
+	</style>
+
+</head>
+
+<body>
+
+<header>
+	<img src="images/logo.jpg" alt="Burger Bomb logo" width="150" height="150">
+	<h1>Contact Us</h1>
+
+</header>
+
+<nav>
+	<ul>
+	<li><a href="index.html">Home Page</a></li>
+	<li><a href="aboutus.html">About Us</a></li>
+	<li><a href="history.html">History</a></li>
+	<li><a href="menu.html">Menu</a></li>
+	<li><a href="contactus.html">Contact Us</a></li>
+	<li><a href="chef.html">Chef</a></li>
+	<li><a href="buffet.html">Buffet</a></li>
+	</ul>
+</nav>
+
+<main>
+
+	<h2>Let Us Know What You Think:</h2>
+
+	<form action="#" method="post" autocomplete="on">
+	<label for="title">Title:</label>
+	<select name="title" id="title">
+		<option value="mr">Mr.</option>
+		<option value="miss">Miss</option>
+		<option value="mrs">Mrs.</option>
+		<option value="mr">Dr.</option>
+	</select>
+	<br>
+	<label>First Name:</label>
+	<input type="text" name="fname" required>
+	<br>
+	<label>Last Name:</label>
+	<input type="text" name="lname" required>
+	<br>
+	<label>Email:</label>
+	<input type="email" name="email" autocomplete="off" required>
+	<br>
+	<label>Phone:</label>
+	<input type="tel" name="phone">
+	<br>
+	<label>Reason for feedback:</label>
+	<br>
+	<input type="radio" name="feedback" value="praise"><label>Praise</label>
+	<input type="radio" name="feedback" value="complaint"><label>Complaint</label>
+	<input type="radio" name="feedback" value="question"><label>Question</label>
+	<input type="radio" name="feedback" value="other"><label>Other (please explain below)</label>
+	<br><br>
+	<label>Comment:</label>
+	<textarea name="comments" rows="20" cols="50"></textarea>
+	<br>
+	<input type="checkbox" id="mailinglist" name="mailinglist" value="subscribe">
+	<label for="mailinglist">Sign me up for exclusive offers and promotions!</label>
+
+	<br>
+	<br>
+	
+	<h3>Enter your four-digit passcode, then click OK:</h3>
+	<input id="id1" type="number" min="1000" max="9999" name="passcode">
+	<button onclick="myFunction()" type="button">OK</button>
+	<p id="passcode"></p>
+	<script>
+	function myFunction() {
+	var inpObj = document.getElementById("id1");
+	if (inpObj.checkValidity() == false) {
+	document.getElementById("passcode").innerHTML =
+	inpObj.validationMessage;
+	} else {
+	document.getElementById("passcode").innerHTML = "Passcode Valid";
+	}
+	}
+	</script>
+
+	<br>
+	<input type="submit" value="Send Form">
+	<br>
+	<input type="reset" value="Clear Form">
+	
+	</form>
+
+</main>
+
+<footer>
+	<p>
+	<a href="index.html">Home Page</a> |
+	<a href="aboutus.html">About Us</a> |
+	<a href="history.html">History</a> |
+	<a href="menu.html">Menu</a> |
+	<a href="contactus.html">Contact Us</a> |
+	<a href="chef.html">Chef</a> |
+	<a href="buffet.html">Buffet</a> 
+	</p>
+</footer>
+
+</body>
+
+</html>
