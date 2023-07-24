@@ -1,136 +1,129 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-
+	<head>
 	<meta charset="utf-8">
-	<title>Burger Bomb - Contact Us</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	
+		<title>EZ Shop - Contact Us Page</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
 	<style>
 	form {
-	width:80%;
+	width: 80%;
 	margin: 0 auto;
+	padding: 10px;
+	font-family: Calibri, Verdana, sans-serif;
+	background-color: #2a332a;
 	}
-	input, textarea, select {
-	display: block;
-	/* background-color: #ff4500 */
-	background-color: rgba(255, 69, 0, 0.5);
-	border-radius: 15px;
-	border: 2px solid #4b0082;
-	font-family: "Times New Roman", Times, serif;
+	
+	input, textarea {
+	box-shadow: 2px 5px 2px #993300;
+	color: #0033cc;
+	font-size: 15px;
+	font-family: "Apple Chancery", "Bradley Hand", serif;
+	border-radius: 10px;
+	border-color: #332700;
+	margin-left: 50px;
 	}
-	input[type=radio], input[type=checkbox] {
-	padding: 5px;
-	display: inline-block;
-	width: 50px;
-	}
+
 	input[type=number] {
-	/* background-color: #4B0082 */
-	background-color: rgba(75, 0, 130, 0.5);
+	background-color: #ffff99;
 	}
+
+	input[type=checkbox], input[type=radio] {
+	height: 15px;
+	width: 15px;
+	margin-left: 10px;
+	}
+
+	select {
+	background-color: #e6f2ff;
+	}
+
+	button, input[type=reset], input[type=submit] {
+	box-shadow: 2px 5px 2px #993300;
+	background-color: #ffe6cc;
+	font-family: Helvetica, Arial, sans-serif;
+	cursor: pointer;
+	border-radius: 10px;
+	}
+
 	</style>
 
-</head>
-
-<body>
-
-<header>
-	<img src="images/logo.jpg" alt="Burger Bomb logo" width="150" height="150">
-	<h1>Contact Us</h1>
-
-</header>
-
+	</head>
+<body id="container">
+	<header>
+		<img src="images/logo.png" alt="EZ Shop's logo" width="150" height="150">
+		<h1>EZ Shop</h1>
+	</header>
 <nav>
 	<ul>
-	<li><a href="index.html">Home Page</a></li>
-	<li><a href="aboutus.html">About Us</a></li>
-	<li><a href="history.html">History</a></li>
-	<li><a href="menu.html">Menu</a></li>
+	<li><a href="index.html" id="current-page">Home Page</a></li>
+	<li><a href="products.html">Products</a></li>
+	<li><a href="coupons.html">Coupons</a></li>
+	<li><a href="cart.html">Cart</a></li>
+	<li><a href="custinfo.html">Customer Info</a></li>
+	<li><a href="payment.html">Payment</a></li>
 	<li><a href="contactus.html">Contact Us</a></li>
-	<li><a href="chef.html">Chef</a></li>
-	<li><a href="buffet.html">Buffet</a></li>
-	</ul>
+</ul>
 </nav>
+	<main>
+		<h2>Please provide us your feedback:</h2>
+		<form action="#" method="post" autocomplete="on">
 
-<main>
-
-	<h2>Let Us Know What You Think:</h2>
-
-	<form action="#" method="post" autocomplete="on">
-	<label for="title">Title:</label>
-	<select name="title" id="title">
-		<option value="mr">Mr.</option>
-		<option value="miss">Miss</option>
-		<option value="mrs">Mrs.</option>
-		<option value="mr">Dr.</option>
-	</select>
-	<br>
-	<label>First Name:</label>
-	<input type="text" name="fname" required>
-	<br>
-	<label>Last Name:</label>
-	<input type="text" name="lname" required>
-	<br>
-	<label>Email:</label>
-	<input type="email" name="email" autocomplete="off" required>
-	<br>
-	<label>Phone:</label>
-	<input type="tel" name="phone">
-	<br>
-	<label>Reason for feedback:</label>
-	<br>
-	<input type="radio" name="feedback" value="praise"><label>Praise</label>
-	<input type="radio" name="feedback" value="complaint"><label>Complaint</label>
-	<input type="radio" name="feedback" value="question"><label>Question</label>
-	<input type="radio" name="feedback" value="other"><label>Other (please explain below)</label>
+		<label>First Name:</label>
+		<input type="text" name="txt_Fname" required>
+		
+	<br><br>	
+		<label>Last Name:</label>
+		<input type="text" name="txt_Lname" required>
+	<br><br>	
+		<label>Email address:</label>
+		<input type="email" name="email_address" autocomplete="off" required>
 	<br><br>
-	<label>Comment:</label>
-	<textarea name="comments" rows="20" cols="50"></textarea>
+		<label>Phone number:</label>
+		<input type="tel" name="num_tel" required>
+	<br><br>	
+		<label>Comments:</label>
 	<br>
-	<input type="checkbox" id="mailinglist" name="mailinglist" value="subscribe">
-	<label for="mailinglist">Sign me up for exclusive offers and promotions!</label>
-
-	<br>
-	<br>
+		<textarea name="comments" rows="10" cols="50"></textarea>
+		
+	<br><br>
+		<label>Are you an existing customer:</label>
+		<select name="existing_customer">
+		<option value=" ">Select</option>
+		<option value="yes">Yes</option>
+		<option value="no">No</option>
+		</select>
 	
-	<h3>Enter your four-digit passcode, then click OK:</h3>
-	<input id="id1" type="number" min="1000" max="9999" name="passcode">
-	<button onclick="myFunction()" type="button">OK</button>
-	<p id="passcode"></p>
+	<br><br>
+		<label>Please select your preferred contact method:</label>
+		<input type="radio" name="method" value="email">Email
+		<input type="radio" name="method" value="phone">Phone
+		
+	<br>
+		<input type="checkbox" name="offer" value="checked">Don't miss out! Check the box to receive exclusive offers, news, updates via email.
+	<br><br>
+		<input type="reset" value="Clear Form">	
+		<input type="submit" value="Submit Form">
+	</form>
+
+</main>
 	<script>
 	function myFunction() {
 	var inpObj = document.getElementById("id1");
 	if (inpObj.checkValidity() == false) {
-	document.getElementById("passcode").innerHTML =
-	inpObj.validationMessage;
+	document.getElementById("passcode").innerHTML = inpObj.validationMessage;
 	} else {
 	document.getElementById("passcode").innerHTML = "Passcode Valid";
 	}
 	}
 	</script>
 
-	<br>
-	<input type="submit" value="Send Form">
-	<br>
-	<input type="reset" value="Clear Form">
-	
-	</form>
-
-</main>
-
-<footer>
-	<p>
-	<a href="index.html">Home Page</a> |
-	<a href="aboutus.html">About Us</a> |
-	<a href="history.html">History</a> |
-	<a href="menu.html">Menu</a> |
-	<a href="contactus.html">Contact Us</a> |
-	<a href="chef.html">Chef</a> |
-	<a href="buffet.html">Buffet</a> 
-	</p>
-</footer>
+	<footer>
+	<p><a href="index.html">Home Page</a>&nbsp; | &nbsp;<a href="products.html">Products</a>&nbsp; | &nbsp;<a href="coupons.html">Coupons</a>&nbsp; | &nbsp;<a href="cart.html">Cart</a>&nbsp; | &nbsp;<a href="custinfo.html">Customer Info</a>&nbsp; | &nbsp;<a href="payment.html">Payment</a>&nbsp; | &nbsp;<a href="contactus.html">Contact Us</a>
+</p>
+	</footer>
+<script src="//code.tidio.co/hx7okjw34vehjtqyxx3zlqbsfdy0odme.js"></script>
 
 </body>
-
 </html>
+
+
