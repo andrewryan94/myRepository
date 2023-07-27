@@ -98,17 +98,17 @@ color: #88945f;
 }
 
 table {
-background-color: #723217;
-color: #000000;
-width: 80%;
-border: 5px solid #2a332a;
-padding: 15px;
+background-color: #2a332a;
+color: #ffffff;
+width: 10%;
+border: 5px solid #ffffff;
+padding: 45px;
 margin: 0 auto;
 }
 
 table tr th, table tr td {
 border: 1px solid #2a332a;
-padding: 15px;
+padding: 50px;
 }
 
 .row-color {
@@ -117,4 +117,9 @@ color: #2a332a;
 
 #current-page {
 color: #723217;
+}
+
+.img-wrapper {
+display: inline-block;
+text-align: center;
 }
