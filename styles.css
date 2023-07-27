@@ -123,3 +123,22 @@ color: #723217;
 display: inline-block;
 text-align: center;
 }
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #86898e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+        background-color: #0f6aa6;
+}
+
+.button:active {
+        transform: scale(0.95);
+}
+
+
