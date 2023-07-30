@@ -122,7 +122,9 @@ color: #723217;
 }
 
 .img-wrapper {
-display: inline-block;
+display: flex; 
+justify-content: center; 
+align-items: center;
 text-align: center;
 }
 
