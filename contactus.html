@@ -87,12 +87,20 @@
 		<label>Comments:</label>
 		<textarea name="comments" rows="5" cols="100"></textarea></div>
 		
-		<div style="display:flex; margin:10px; align-items:center;">
-		<label>Please select your preferred contact method:</label>
-		<input type="radio" id="email" name="method" value="email"><label for="email">Email</label><br>
-		<input type="radio" id="phone" name="method" value="phone"><label for="phone">Phone</label><br>
-		</div>
-		
+		<div style="display: flex; margin: 10px; align-items: center;">
+ 		<label>Please select your preferred contact method:</label>
+  		<div style="display: flex; flex-direction: column; margin-left: 10px;">
+   		<div style="display: flex; align-items: center;">
+      		<input type="radio" id="email" name="method" value="email">
+      		<label for="email" style="margin-left: 5px;">Email</label>
+    		</div>
+    		<div style="display: flex; align-items: center;">
+      		<input type="radio" id="phone" name="method" value="phone">
+      		<label for="phone" style="margin-left: 5px;">Phone</label>
+    		</div>
+  		</div>
+		</div>	
+				
 		<div style="display:flex; margin:10px; align-items:center;">
 		<input type="checkbox" name="offer" value="checked" display="inline-block"><label style="color: #ffffff">Don't miss out! Check the box to receive exclusive offers, news, and updates via email.</label>
 		</div>
