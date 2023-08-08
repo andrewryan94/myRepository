@@ -62,39 +62,44 @@
 		<h2>Please provide us your feedback:</h2>
 		<form action="#" method="post" autocomplete="on">
 
+		<div style="display:flex; margin:10px;">
 		<label>First Name:</label>
-		<input type="text" name="txt_Fname" required>
+		<input type="text" name="txt_Fname" required></div>
 		
-	<br><br>	
+		<div style="display:flex; margin:10px;">	
 		<label>Last Name:</label>
-		<input type="text" name="txt_Lname" required>
-	<br><br>	
+		<input type="text" name="txt_Lname" required></div>
+
+		<div style="display:flex; margin:10px;">
 		<label>Email address:</label>
-		<input type="email" name="email_address" autocomplete="off" required>
-	<br><br>
+		<input type="email" name="email_address" autocomplete="off" required></div>
+
+		<div style="display:flex; margin:10px;">
 		<label>Phone number:</label>
-		<input type="tel" name="num_tel" required>
-	<br><br>	
+		<input type="tel" name="num_tel" required></div>
+
+		<div style="display:flex; margin:10px;">
 		<label>Comments:</label>
-	<br>
-		<textarea name="comments" rows="5" cols="100"></textarea>
+		<textarea name="comments" rows="5" cols="100"></textarea></div>
 		
-	<br><br>
+		<div style="display:flex; margin:10px;">
 		<label>Are you an existing customer:</label>
 		<select name="existing_customer">
 		<option value=" ">Select</option>
 		<option value="yes">Yes</option>
 		<option value="no">No</option>
-		</select>
+		</select></div>
 	
-	<br><br>
+		<div style="display:flex; margin:10px;">
 		<label>Please select your preferred contact method:</label>
 		<input type="radio" name="method" value="email"><label for="email" style="display:inline-block; vertical-align:middle;">Email</label>
-		<input type="radio" name="method" value="phone"><label for="phone" style="display:inline-block; vertical-align:middle;">Phone</label>	
+		<input type="radio" name="method" value="phone"><label for="phone" style="display:inline-block; vertical-align:middle;">Phone</label>
+		</div>
 		
-	<br><br><br>
+		<div style="display:flex; margin:10px;">
 		<input type="checkbox" name="offer" value="checked" display="inline-block"><label>Don't miss out! Check the box to receive exclusive offers, news, and updates via email.</label>
-	<br><br>
+		</div>
+			
 		<input type="reset" value="Clear Form">	
 		<input type="submit" value="Submit Form">
 	</form>
