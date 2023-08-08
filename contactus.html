@@ -81,7 +81,7 @@
 
 		<div style="display:flex; margin:10px;">
 		<label>Phone number:</label>
-		<input type="tel" name="num_tel" required></div>
+		<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></div>
 
 		<div style="display:flex; margin:10px;">
 		<label>Comments:</label>
@@ -90,7 +90,7 @@
 		<div style="display:flex; margin:10px; align-items:center;">
 		<label>Please select your preferred contact method:</label>
 		<input type="radio" id="email" name="method" value="email"><label for="email">Email</label>
-		<input type="radio" type="tel" id="phone" name="method" value="phone" pattern=[0-9]{3}-[0-9]{3}-[0-9]{4}"><label for="phone">Phone</label>
+		<input type="radio" id="phone" name="method" value="phone"><label for="phone">Phone</label>
 		</div>
 		
 		<div style="display:flex; margin:10px; align-items:center;">
