@@ -62,15 +62,15 @@
 		<h2>Please provide us your feedback:</h2>
 		<form action="#" method="post" autocomplete="on">
 
-		<div style="display:flex; margin:10px;">
+		<div style="display:flex; margin:5px;">
 		<label>First Name:</label>
 		<input type="text" name="txt_Fname" required></div>
 		
-		<div style="display:flex; margin:10px;">	
+		<div style="display:flex; margin:5px;">	
 		<label>Last Name:</label>
 		<input type="text" name="txt_Lname" required></div>
 
-		<div style="display:flex; margin:10px;">
+		<div style="display:flex; margin:5px;">
 		<label>Email address:</label>
 		<input type="email" name="email_address" autocomplete="off" required></div>
 
@@ -83,17 +83,9 @@
 		<textarea name="comments" rows="5" cols="100"></textarea></div>
 		
 		<div style="display:flex; margin:10px;">
-		<label>Are you an existing customer:</label>
-		<select name="existing_customer">
-		<option value=" ">Select</option>
-		<option value="yes">Yes</option>
-		<option value="no">No</option>
-		</select></div>
-	
-		<div style="display:flex; margin:10px;">
 		<label>Please select your preferred contact method:</label>
-		<input type="radio" name="method" value="email"><label for="email" style="display:inline-block; vertical-align:middle;">Email</label>
-		<input type="radio" name="method" value="phone"><label for="phone" style="display:inline-block; vertical-align:middle;">Phone</label>
+		<input type="radio" name="method" value="email"><label for="email">Email</label>
+		<input type="radio" name="method" value="phone"><label for="phone">Phone</label>
 		</div>
 		
 		<div style="display:flex; margin:10px;">
@@ -105,16 +97,7 @@
 	</form>
 
 </main>
-	<script>
-	function myFunction() {
-	var inpObj = document.getElementById("id1");
-	if (inpObj.checkValidity() == false) {
-	document.getElementById("passcode").innerHTML = inpObj.validationMessage;
-	} else {
-	document.getElementById("passcode").innerHTML = "Passcode Valid";
-	}
-	}
-	</script>
+	
 
 	<footer>
 	<p><a href="index.html">Home Page</a>&nbsp; | &nbsp;<a href="products.html">Products</a>&nbsp; | &nbsp;<a href="coupons.html">Coupons</a>&nbsp; | &nbsp;<a href="cart.html">Cart</a>&nbsp; | &nbsp;<a href="contactus.html">Contact Us</a>
