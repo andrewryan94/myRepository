@@ -41,7 +41,7 @@
 	}
 
 	label {
-		color: #000000
+		color: #000000;
 		display: inline-block;
      		text-align: left;
 		}
@@ -64,8 +64,8 @@
 </ul>
 </nav>
 	<main>
-		<h2 align=center>Please provide us your thoughts, feedback, or suggestions below. Thank you.</h2>
-		<form action="javascript:sendemail.js" method="get" autocomplete="off">
+		<h2>Please provide us your thoughts, feedback, or suggestions below. Thank you.</h2>
+		<form autocomplete="off">
 
 		<div style="display:flex; margin:10px;">
 		<label>First Name:</label>
@@ -81,7 +81,7 @@
 
 		<div style="display:flex; margin:10px;">
 		<label>Phone number:</label>
-		<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></div>
+		<input type="tel" id="phone" name="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></div>
 
 		<div style="display:flex; margin:10px;">
 		<label>Comments:</label>
@@ -95,14 +95,14 @@
       		<label for="email" style="margin-right: 5px;">Email</label>
     		</div>
     		<div style="display: flex; align-items: center;">
-      		<input type="radio" id="phone" name="method" value="phone">
-      		<label for="phone" style="margin-right: 5px;">Phone</label>
+      		<input type="radio" id="phone_method" name="method" value="phone_method">
+      		<label for="phone_method" style="margin-right: 5px;">Phone</label>
     		</div>
   		</div>
 		</div>	
 				
 		<div style="display:flex; margin:10px; align-items:center;">
-		<input type="checkbox" name="offer" value="checked" display="inline-block"><label style="color: #ffffff">Don't miss out! Check the box to receive exclusive offers, news, and updates via email.</label>
+		<input type="checkbox" name="offer" value="checked"><label style="color: #ffffff">Don't miss out! Check the box to receive exclusive offers, news, and updates via email.</label>
 		</div>
 			
 		<input type="reset" class="button" value="Clear Form">	
@@ -116,6 +116,8 @@
 	<p><a href="index.html">Home Page</a>&nbsp; | &nbsp;<a href="products.html">Products</a>&nbsp; | &nbsp;<a href="coupons.html">Coupons</a>&nbsp; | &nbsp;<a href="cart.html">Cart</a>&nbsp; | &nbsp;<a href="contactus.html">Contact Us</a>
 </p>
 	</footer>
+
+<!-- link to an external JavaScipt file -->
 <script src="js/sendemail.js"></script>
 
 </body>
