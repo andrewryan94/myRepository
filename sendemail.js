@@ -20,7 +20,7 @@ if (comments.trim() === '') {
 }
 
 if (errors === '') {
-  const to = 'cecillepapa@student.purdueglobal.edu';
+  const to = 'CecillePapa@student.purdueglobal.edu';
   const subject = 'Contact Form Submission from ${name} for EZ Shop';
   let message = 'You have received a new message from your contact form.\n\n';
   message += 'Here are the details:\n\n';
