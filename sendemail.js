@@ -26,7 +26,7 @@ function sendEmail(formData) {
   };
 
   // send an email using emailjs API
-    emailjs.send('service_ID', 'template_ID', params, 'user_ID')
+    emailjs.send('service_vtb5y3c', 'service_vtb5y3c', params, 'Q6FOOPst1gHGfCqHw')
     .then(function(response) {
       // display a success message if the email is sent
       alert('Your message has been sent successfully!');
@@ -50,6 +50,6 @@ submitButton.addEventListener('click', function(event) {
   // get the form data as a FormData object
   let formData = new FormData(form);
 
-  // call the sendEmail function with the form data as a parameter
+  // call the sendEmail function 
   sendEmail(formData);
 });
