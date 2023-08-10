@@ -1,7 +1,7 @@
 // sendemail.js file
 
 // import emailjs library
-import emailjs from 'emailjs-com';
+import emailjs from 'emailjs.com';
 
 // define sendEmail function
 function sendEmail(formData) {
