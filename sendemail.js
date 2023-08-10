@@ -1,39 +1,55 @@
-const name = '${document.getElementById('txt_Fname').value} ${document.getElementById('txt_Lname').value}';
-const email = document.getElementById('email_address').value;
-const phone = document.getElementById('phone').value;
-const comments = document.getElementById('comments').value;
-const method = document.getElementById('method').value;
-const offer = document.getElementById('offer').value;
+// sendemail.js file
 
-let errors = '';
+// import emailjs library
+import emailjs from 'emailjs-com';
 
-if (!email.match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)) {
-  errors += 'Invalid email address.\n';
+// define sendEmail function
+function sendEmail(formData) {
+  // get the values from the form data
+  let firstName = formData.get('txt_Fname');
+  let lastName = formData.get('txt_Lname');
+  let email = formData.get('email_address');
+  let phone = formData.get('phone_number');
+  let comments = formData.get('comments');
+  let method = formData.get('method');
+  let offer = formData.get('offer');
+
+  // create an object with the variables for the email template
+  let params = {
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    phone: phone,
+    comments: comments,
+    method: method,
+    offer: offer
+  };
+
+  // send an email using emailjs API
+    emailjs.send('service_ID', 'template_ID', params, 'user_ID')
+    .then(function(response) {
+      // display a success message if the email is sent
+      alert('Your message has been sent successfully!');
+    }, function(error) {
+      // display an error message if the email fails to send
+      alert('Oops... something went wrong. Please try again later.');
+    });
 }
 
-if (!phone.match(/^\d{3}-\d{3}-\d{4}$/)) {
-  errors += 'Invalid phone number.\n';
-}
+// get the form element from the HTML file
+let form = document.querySelector('form');
 
-if (comments.trim() === '') {
-  errors += 'Please enter comments.\n';
-}
+// get the submit button element from the HTML file
+let submitButton = document.querySelector('input[type=submit]');
 
-if (errors === '') {
-  const to = 'CecillePapa@student.purdueglobal.edu';
-  const subject = 'Contact Form Submission from ${name} for EZ Shop';
-  let message = 'You have received a new message from your contact form.\n\n';
-  message += 'Here are the details:\n\n';
-  message += 'Name: ${name}\n';
-  message += 'Email: ${email}\n';
-  message += 'Phone: ${phone}\n';
-  message += 'Comments: ${comments}\n';
-  message += 'Preferred Contact Method: ${method}\n';
-  message += 'Special Offer: ${offer}\n';
+// add an event listener to the submit button that calls the sendEmail function
+submitButton.addEventListener('click', function(event) {
+  // prevent the default behavior of the form submission
+  event.preventDefault();
 
-  // Send email
-  // ...
-} else {
-  // Handle errors
-  // ...
-}
+  // get the form data as a FormData object
+  let formData = new FormData(form);
+
+  // call the sendEmail function with the form data as a parameter
+  sendEmail(formData);
+});
