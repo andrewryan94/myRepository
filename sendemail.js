@@ -1,4 +1,4 @@
-const name = `${document.getElementById('txt_Fname').value} ${document.getElementById('txt_Lname').value}`;
+const name = '${document.getElementById('txt_Fname').value} ${document.getElementById('txt_Lname').value}';
 const email = document.getElementById('email_address').value;
 const phone = document.getElementById('phone').value;
 const comments = document.getElementById('comments').value;
