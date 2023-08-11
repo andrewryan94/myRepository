@@ -132,9 +132,6 @@
 	<br>
 	<Label>ZIP Code</Label><input type="text" pattern="[0-9]{5}" title="Five digit zip code" />
 	<br>
-	<input type="checkbox" id="mailinglist" name="mailinglist" value="subscribe">
-	<label for="mailinglist">Sign me up for exclusive offers and promotions!</label>
-	<br>
 	<br>
 	
 	<label>Enter your 4-digit promotional code:</label>
@@ -148,11 +145,14 @@
 	document.getElementById("passcode").innerHTML =
 	inpObj.validationMessage;
 	} else {
-	document.getElementById("passcode").innerHTML = "Passcode Valid";
+	document.getElementById("passcode").innerHTML = "Code Valid";
 	}
 	}
 	</script>
 
+	<input type="checkbox" id="mailinglist" name="mailinglist" 	value="subscribe">
+	<label for="mailinglist">Sign me up for exclusive offers and 	promotions!</label>
+	<br>
 	<br>
 	<input type="submit" value="Send Form">
 	<br>
