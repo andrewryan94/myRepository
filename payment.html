@@ -29,8 +29,7 @@
 		width: 50px;
 		}
 		input[type=number] {
-		/* background-color: #4B0082 */
-		background-color: rgba(75, 0, 130, 0.5);
+		background-color: #2a332a;
 		}
 		label {
 		color: #000000
@@ -61,7 +60,10 @@
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Hac habitasse platea dictumst quisque. Vivamus at augue eget arcu dictum. Commodo ullamcorper a lacus vestibulum sed arcu non. Morbi tincidunt ornare massa eget egestas purus viverra. Ultrices sagittis orci a scelerisque purus semper eget. Posuere morbi leo urna molestie at elementum eu facilisis. Tellus in hac habitasse platea dictumst vestibulum rhoncus. Metus aliquam eleifend mi in nulla. Egestas sed sed risus pretium quam vulputate. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Pulvinar sapien et ligula ullamcorper malesuada proin libero. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar. Integer vitae justo eget magna fermentum iaculis. Gravida cum sociis natoque penatibus et. Id eu nisl nunc mi ipsum faucibus vitae.</p>
 
-<form action="#" method="post" autocomplete="on">
+	<div>
+	<h2>Customer Contact Info</h2>
+	<br>
+	<form action="#" method="post" autocomplete="on">
 	<label for="title">Title:</label>
 	<select name="title" id="title">
 		<option value="mr">Mr.</option>
@@ -70,24 +72,28 @@
 		<option value="mr">Dr.</option>
 	</select>
 	<br>
-	<label>First Name:</label>
+	<label>First Name</label>
 	<input type="text" name="fname" required>
 	<br>
-	<label>Last Name:</label>
+	<label>Last Name</label>
 	<input type="text" name="lname" required>
 	<br>
-	<label>Email:</label>
+	<label>Email</label>
 	<input type="email" name="email" autocomplete="off" required>
 	<br>
-	<label>Phone:</label>
+	<label>Phone (Optional)</label>
 	<input type="tel" name="phone">
-	<br><br>
-	<label>Comment:</label>
-	<textarea name="comments" rows="20" cols="50"></textarea>
+	<br>
+	</div>
+	<div>
+	<h2>Shipping Address</h2>
+	<br>
+	<label>Street Address</label>
+	<input type="text" name="shipaddress">
 	<br>
 	<input type="checkbox" id="mailinglist" name="mailinglist" value="subscribe">
 	<label for="mailinglist">Sign me up for exclusive offers and promotions!</label>
-
+	</div>
 	<br>
 	<br>
 	
