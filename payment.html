@@ -78,8 +78,6 @@
 
 	<main>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Hac habitasse platea dictumst quisque. Vivamus at augue eget arcu dictum. Commodo ullamcorper a lacus vestibulum sed arcu non. Morbi tincidunt ornare massa eget egestas purus viverra. Ultrices sagittis orci a scelerisque purus semper eget. Posuere morbi leo urna molestie at elementum eu facilisis. Tellus in hac habitasse platea dictumst vestibulum rhoncus. Metus aliquam eleifend mi in nulla. Egestas sed sed risus pretium quam vulputate. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Pulvinar sapien et ligula ullamcorper malesuada proin libero. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar. Integer vitae justo eget magna fermentum iaculis. Gravida cum sociis natoque penatibus et. Id eu nisl nunc mi ipsum faucibus vitae.</p>
-
 	<br>
 	<form action="#" method="post" autocomplete="on">
 	<h2>Billing Information</h2>
@@ -159,6 +157,10 @@
 	<Label>ZIP Code</Label><input type="text" pattern="[0-9]{5}" name="billingZip" id="billingZip" />
 	<br>
 	<h2>Shipping Information</h2>
+	<input type="checkbox" id="sameAsBilling" onchange="copyBillingToShipping()">
+	<label for="sameAsBilling">Same as Billing</label>
+	<br>
+	<br>
 	<label>First Name</label>
 	<input type="text" name="shippingFname" id="shippingFname" required>
 	<br>
@@ -228,10 +230,6 @@
 	<br>
 	<Label>ZIP Code</Label>
 	<input type="text" pattern="[0-9]{5}" name="shippingZip" id="shippingZip" />
-	<br>
-
-	<input type="checkbox" id="sameAsBilling" onchange="copyBillingToShipping()">
-	<label for="sameAsBilling">Same as Billing</label><br>
 	<br>
 	
 	<label>Enter your 4-digit promotional code:</label>
