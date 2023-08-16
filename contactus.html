@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en">
-	<head>
+
+<head>
 	<meta charset="utf-8">
 		<title>EZ Shop - Contact Us Page</title>
 		<link rel="stylesheet" type="text/css" href="styles.css">
-	<style>
+<style>
 	form {
 	width: 80%;
 	margin: 0 auto;
@@ -42,19 +43,65 @@
 	}
 
 	label {
-		color: #ffffff;
-		display: inline-block;
-     		text-align: left;
-		}
+	color: #ffffff;
+	display: inline-block;
+     	text-align: left;
+	}
+	
+	label2 {
+	color: #000000;
+	font-size: 20px;
+	display: inline-block;
+	}
 
-	</style>
+	
+	.form-group {
+	display: flex; 
+	align-items: center;
+	margin: 10px; 
 
-	</head>
+	.form-group > input,
+	.form-group > textarea,
+	.form-group > select {
+	width: 80%; 
+	border: none; 
+	outline: none; 
+	}
+
+	.form-group > textarea {
+	height: 100px;
+	resize: none;
+	}
+
+	.form-group > input[type=submit],
+	.form-group > input[type=reset] {
+	width: auto;
+	margin-left: auto;
+	}
+
+
+	.radio-group {
+	display: flex; 
+	flex-direction: column; 
+	margin-right: 10px; 
+	}
+
+	.radio-group > div {
+	display: flex; 
+	align-items: center; 
+	}
+
+	.radio-group > div > label {
+	margin-right: 5px; 
+	}
+	
+</style>
+</head>
 <body id="container">
-	<header>
+<header>
 		<img src="images/logo.png" alt="EZ Shop's logo" width="150" height="150">
 		<h1>EZ Shop</h1>
-	</header>
+</header>
 <nav>
 	<ul>
 	<li><a href="index.html">Home Page</a></li>
@@ -65,51 +112,152 @@
 </ul>
 </nav>
 	<main>
-		<h2>Please provide us your thoughts, feedback, or suggestions below. Thank you.</h2>
-		<form id="form" autocomplete="off">
+		<h1 style="color:black">Contact Us</h1>
+		<div style="display:flex; margin:5px; align-items:center;">
+		<label2>We are always open to hearing your thoughts, feedback, or suggestions.
+		 Please do not hesitate to contact us using the Contact Us page, by phone at 1-800-EZ-SHOP-23,
+		 by email at 7Bit@ezshop.com, or visit us at 1111 Waterside Drive, Anaheim, CA 92802. 
+		We look forward to hearing from you.</label2>
+		</div>
 
-		<div style="display:flex; margin:10px;">
-		<label>First Name:</label>
-		<input type="text" name="txt_Fname" placeholder="First Name" required></div>
+		<form id="form" autocomplete="off" onsubmit="return validateForm()">
+
+	<fieldset>
+		<legend style="color:white;">Personal Information</legend>
+
 		
-		<div style="display:flex; margin:10px;">	
-		<label>Last Name:</label>
-		<input type="text" name="txt_Lname" placeholder="Last Name" required></div>
-
-		<div style="display:flex; margin:10px;">
-		<label>Email address:</label>
-		<input type="email" name="email_address" autocomplete="off" placeholder="Email address" required></div>
-
-		<div style="display:flex; margin:10px;">
-		<label>Phone number:</label>
-		<input type="tel" id="phone" name="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx" required></div>
-
-		<div style="display:flex; margin:10px;">
-		<label>Comments:</label>
-		<textarea name="comments" rows="5" cols="100" placeholder="Comment goes here"></textarea></div>
+		<div class="form-group" style="display:flex; margin:10px;">
+		<label>First Name:</label> <input type="text" id="fname" name="txt_Fname" placeholder="First Name" required>
+		</div>
 		
-		<div style="display: flex; margin: 10px; align-items: center;">
- 		<label>Please select your preferred contact method:</label>
-  		<div style="display: flex; flex-direction: column; margin-right: 10px;">
-   		<div style="display: flex; align-items: center;">
-      		<input type="radio" id="email" name="method" value="email">
-      		<label for="email" style="margin-right: 5px;">Email</label>
+		<div class="form-group" style="display:flex; margin:10px;">	
+		<label>Last Name:</label> <input type="text" id="lname" name="txt_Lname" placeholder="Last Name" required>
+		</div>
+
+		<div class="form-group" style="display:flex; margin:10px;">
+		<label>Email address:</label> <input type="email" id="email" name="email_address" autocomplete="off" placeholder="Email address" required>
+		</div>
+
+		<div class="form-group" style="display:flex; margin:10px;">
+		<label>Phone number:</label> <input type="tel" id="phone" name="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx" required>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend style="color:white;">Comments</legend> 
+		<div class="form-group" style="display:flex; margin:10px;">
+		<label for="subject">Subject:</label>
+		<select id="subject" name="subject"> 
+		<option value="">Please select a subject</option> 
+		<option value="feedback">Feedback</option>
+		<option value="question">Question</option>
+		<option value="suggestion">Suggestion</option>
+		<option value="other">Other</option>
+		</select>
+		</div>
+		<div class="form-group" style="display:flex; margin:10px;">
+		<label for="comments">Comments:</label>
+		<textarea id="comments" name="comments" rows="5" cols="100" placeholder="Comment goes here"></textarea>
+		</div>
+	</fieldset>	
+
+	<fieldset>
+		<legend style="color:white;">Contact Method</legend>
+		<div class="form-group" style="display: flex; margin: 10px; align-items: center;">
+ 		<label for="method">Please select your preferred contact method:</label>
+  		
+		<div class="radio-group" style="display: flex; flex-direction: column; margin-right: 10px;">
+   		
+		<div style="display: flex; align-items: center;">
+      		<input type="radio" id="email_method" name="method" value="email_method">
+      		<label for="email_method" style="margin-right: 5px;">Email</label>
     		</div>
     		<div style="display: flex; align-items: center;">
-      		<input type="radio" id="phone_method" name="method" value="phone_method">
+		<input type="radio" id="phone_method" name="method" value="phone_method">
       		<label for="phone_method" style="margin-right: 5px;">Phone</label>
     		</div>
   		</div>
 		</div>	
+	</fieldset>
+
+		<div class="form-group" style="display:flex; margin:10px; align-items:center;">
+		<input type="checkbox" id="offer" name="offer" value="checked"><label for ="offer">Don't miss out! Check the box to receive exclusive offers, news, and updates via email.</label>
 		<br>
-		<br>
-		<div style="display:flex; margin:10px; align-items:center;">
-		<input type="checkbox" name="offer" value="checked"><label>Don't miss out! Check the box to receive exclusive offers, news, and updates via email.</label>
 		</div>
-			
+		<div class ="form-group">	
 		<input type="reset" class="button" value="Clear Form">	
 		<input type="submit" class="button" value="Submit Form">
+		</div>
+	
 	</form>
+
+	<script>
+	function validateForm()
+	{
+  	var fname = document.getElementById("fname");
+  	var lname = document.getElementById("lname");
+  	var email = document.getElementById("email");
+  	var phone = document.getElementById("phone");
+  	var subject = document.getElementById("subject");
+  	var comments = document.getElementById("comments");
+  	var email_method = document.getElementById("email_method");
+  	var phone_method = document.getElementById("phone_method");
+
+ 	 
+  	if (fname.value == "") {
+  	  
+   	 alert("Please enter your first name.");
+   	 
+    	fname.focus();
+    	return false;
+  	}
+
+  	
+  	if (lname.value == "") {
+   	 alert("Please enter your last name.");
+    	lname.focus();
+   	 return false;
+  	}
+
+  	
+  	var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+ 	 if (!emailRegex.test(email.value)) {
+   	 alert("Please enter a valid email address.");
+   	 email.focus();
+    	return false;
+ 	 }
+
+  	
+	if (!phone.checkValidity()) {
+  	 alert("Please enter a valid phone number.");
+ 	  phone.focus();
+ 	 return false;
+ 	 }
+ 	 
+ 	 if (subject.value == "") {
+    alert("Please select a subject.");
+    subject.focus();
+    return false;
+    }
+
+    var commentsRegex = /^\s*$/;
+    if (commentsRegex.test(comments.value)) {
+    alert("Please enter a comment.");
+    comments.focus();
+    return false;
+    }
+
+    if (!email_method.checked && !phone_method.checked) {
+    alert("Please select your preferred contact method.");
+    email_method.focus();
+    return false;
+    }
+
+    alert("Thank you for your feedback, question, or suggestion.");
+
+    return true;
+    }
+    </script>
 
 </main>
 	
@@ -118,9 +266,7 @@
 	<p><a href="index.html">Home Page</a>&nbsp; | &nbsp;<a href="products.html">Products</a>&nbsp; | &nbsp;<a href="coupons.html">Coupons</a>&nbsp; | &nbsp;<a href="cart.html">Cart</a>&nbsp; | &nbsp;<a href="contactus.html">Contact Us</a>
 </p>
 	</footer>
-<!-- link to an external JavaScipt file -->
-<script src="sendemail.js"></script>
-	
+
 </body>
 
 	
