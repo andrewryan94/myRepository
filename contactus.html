@@ -191,7 +191,7 @@
 	
 	</form>
 
-	<script>
+<script>
 	function validateForm()
 	{
   	var fname = document.getElementById("fname");
@@ -235,29 +235,29 @@
  	 }
  	 
  	 if (subject.value == "") {
-    alert("Please select a subject.");
-    subject.focus();
-    return false;
-    }
+    	alert("Please select a subject.");
+    	subject.focus();
+    	return false;
+    	}
 
-    var commentsRegex = /^\s*$/;
-    if (commentsRegex.test(comments.value)) {
-    alert("Please enter a comment.");
-    comments.focus();
-    return false;
-    }
+    	var commentsRegex = /^\s*$/;
+    	if (commentsRegex.test(comments.value)) {
+    	alert("Please enter a comment.");
+    	comments.focus();
+   	 return false;
+   	 }
 
-    if (!email_method.checked && !phone_method.checked) {
-    alert("Please select your preferred contact method.");
-    email_method.focus();
-    return false;
-    }
+    	if (!email_method.checked && !phone_method.checked) {
+    	alert("Please select your preferred contact method.");
+    	email_method.focus();
+    	return false;
+    	}
 
-    alert("Thank you for your feedback, question, or suggestion.");
+    	alert("Thank you for your feedback, question, or suggestion.");
 
-    return true;
-    }
-    </script>
+    	return true;
+    	}
+</script>
 
 </main>
 	
