@@ -9,18 +9,16 @@
 <style>
 	
 	.column {
-  	float: left;
-  	width: 20%;
   	padding: 10px;
 	box-sizing: border-box;
 	}
 
 	
-	.row:after {
-  	content: "";
-  	display: table;
-  	clear: both;
-	}
+	.row {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-auto-rows: 1fr;
+  	}
 </style>
 </head>
 
