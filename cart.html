@@ -5,9 +5,106 @@
 	<meta charset="utf-8">
 		<title>EZ Shop - Cart</title>
 		<link rel="stylesheet" type="text/css" href="styles.css">
+
+<style>
+        cart-container {
+            width: 80%;
+            margin: auto;
+            border: 1px solid black;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .cart-header h1 {
+            margin: 0;
+        }
+
+        .cart-header button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid black;
+        }
+
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .cart-item-info {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+
+        .cart-item-price {
+            font-weight: bold;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-item-quantity button {
+            width: 30px;
+            height: 30px;
+            background-color: lightgray;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cart-item-quantity input {
+            width: 50px;
+            height: 30px;
+            text-align: center;
+        }
+
+        .cart-item-remove {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cart-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px; 
+        }
+
+        .cart-footer h2 {
+            margin: 0; 
+        }
+</style>
 	</head>
 
 <body id="container">
+	 <div class="cart-container">
+        <div class="cart-header">
+            <h1>Shopping Cart</h1>
+            <button id="clear-cart">Clear Cart</button>
+        </div>
+		 
 	<header>
 		<img src="images/logo.png" alt="EZ Shop logo" 	width="150" height="150">
 
@@ -26,6 +123,106 @@
 
 	<main>
 <h1 style="color:black">Cart</p>
+
+     <div class="cart-item">
+            
+                <img src="product1.jpg" alt="Product 1">
+            
+                <div class="cart-item-info">
+                    <h3>Product 1</h3>
+                    <p class="cart-item-price">$19.99</p>
+                </div>
+            
+                <div class="cart-item-quantity">
+                    <button class="decrement">-</button>
+                    <input type="number" value="1" min="1">
+                    <button class="increment">+</button>
+                </div>
+
+                <button class="cart-item-remove">X</button>
+
+            
+        </div>
+    </div>
+
+    <div class="cart-footer">
+                   
+                <h2>Total Price:</h2>
+                <p id="total-price">$19.99</p>
+            
+        
+    </div>
+
+    <script>
+        
+            
+                let cartItems = document.querySelectorAll(".cart-item");
+                let clearCartButton = document.getElementById("clear-cart");
+                let totalPriceElement = document.getElementById("total-price");
+
+             
+                function calculateTotalPrice() {
+                    let totalPrice = 0;
+
+                  
+                    for (let cartItem of cartItems) {
+                        let priceElement = cartItem.querySelector(".cart-item-price");
+                        let quantityElement = cartItem.querySelector("input");
+                        let price = parseFloat(priceElement.innerText.replace("$", ""));
+                        let quantity = parseInt(quantityElement.value);
+                        totalPrice += price * quantity; 
+                    }
+
+                  
+                    totalPrice = Math.round(totalPrice * 100) / 100;
+
+                   
+                    totalPriceElement.innerText = "$" + totalPrice; 
+                }
+
+              
+                for (let cartItem of cartItems) {
+                    let incrementButton = cartItem.querySelector(".increment");
+                    let decrementButton = cartItem.querySelector(".decrement");
+                    let removeButton = cartItem.querySelector(".cart-item-remove");
+
+                   
+                    incrementButton.addEventListener("click", function() {
+                        let quantityElement = cartItem.querySelector("input");
+                        let quantity = parseInt(quantityElement.value);
+                        quantity++;
+                        quantityElement.value = quantity;
+                        calculateTotalPrice();
+                    });
+
+                  
+                    decrementButton.addEventListener("click", function() {
+                        let quantityElement = cartItem.querySelector("input");
+                        let quantity = parseInt(quantityElement.value);
+                        if (quantity > 1) {
+                            quantity--;
+                            quantityElement.value = quantity;
+                            calculateTotalPrice();
+                        }
+                    });
+
+                
+                    removeButton.addEventListener("click", function() {
+                        cartItem.remove();
+                        calculateTotalPrice();
+                    });
+                }
+
+            
+                clearCartButton.addEventListener("click", function() {
+                    for (let cartItem of cartItems) {
+                        cartItem.remove();
+                    }
+                    calculateTotalPrice();
+                });
+            
+        
+    </script>
 
    <form>
       <input type="button" onclick="window.location.href='https://andrewryan94.github.io/myRepository/payment.html';" value="Check Out" />
