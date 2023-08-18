@@ -133,7 +133,7 @@
      
  	<button id="clear-cart">Clear Cart</button>
  	</div>
-	</div>
+	
 		 
 <div class="cart-item">
             
@@ -146,7 +146,7 @@
             
                 <div class="cart-item-quantity">
                     <button class="decrement">-</button>
-                    <input type="number" value="1" min="0">
+                    <input type="number" value="1" min="0" class="quantity">
                     <button class="increment">+</button>
                 </div>
 
@@ -165,7 +165,7 @@
             
                 <div class="cart-item-quantity">
                     <button class="decrement">-</button>
-                    <input type="number" value="1" min="0">
+                    <input type="number" value="1" min="0" class="quantity">
                     <button class="increment">+</button>
                 </div>
 
@@ -184,7 +184,7 @@
             
                 <div class="cart-item-quantity">
                     <button class="decrement">-</button>
-                    <input type="number" value="1" min="0">
+                    <input type="number" value="1" min="0" class="quantity">
                     <button class="increment">+</button>
                 </div>
 
@@ -203,7 +203,7 @@
             
                 <div class="cart-item-quantity">
                     <button class="decrement">-</button>
-                    <input type="number" value="1" min="0">
+                    <input type="number" value="1" min="0" class="quantity">
                     <button class="increment">+</button>
                 </div>
 
@@ -221,7 +221,7 @@
             
                 <div class="cart-item-quantity">
                     <button class="decrement">-</button>
-                    <input type="number" value="1" min="0">
+                    <input type="number" value="1" min="0" class="quantity">
                     <button class="increment">+</button>
                 </div>
 
@@ -239,7 +239,7 @@
             
                 <div class="cart-item-quantity">
                     <button class="decrement">-</button>
-                    <input type="number" value="1" min="0">
+                    <input type="number" value="1" min="0" class="quantity">
                     <button class="increment">+</button>
                 </div>
 
@@ -257,7 +257,7 @@
             
                 <div class="cart-item-quantity">
                     <button class="decrement">-</button>
-                    <input type="number" value="1" min="0">
+                    <input type="number" value="1" min="0" class="quantity">
                     <button class="increment">+</button>
                 </div>
 
@@ -275,7 +275,7 @@
             
                 <div class="cart-item-quantity">
                     <button class="decrement">-</button>
-                    <input type="number" value="1" min="0">
+                    <input type="number" value="1" min="0" class="quantity">
                     <button class="increment">+</button>
                 </div>
 
@@ -293,7 +293,7 @@
             
                 <div class="cart-item-quantity">
                     <button class="decrement">-</button>
-                    <input type="number" value="1" min="0">
+                    <input type="number" value="1" min="0" class="quantity">
                     <button class="increment">+</button>
                 </div>
 
@@ -302,12 +302,27 @@
 
 <div class="cart-footer">             
                 <h4>Total Price:</h4>
-                <p id="total-price">totalPrice</p>
+                <p id="total-price">Total: $0.00</p>
 </div>
 
     <script>
-        
-            
+        	var prices = document.getElementsByClassName("cart-item-price");
+	    	var quantities = document.getElementsByClassName("quantity");
+	    	var total = document.getElementById("total");
+		function updateTotal() {
+			var sum = 0;
+			for (var i = 0; i < prices.length; i++) {
+			var price = parseFloat(prices[i].innerText.replace("$", ""));
+            	var quantity = parseInt(quantities[i].value);	
+			sum += price * quantity;
+        		}
+			total.innerText = "Total: $" + sum.toFixed(2);
+    			}
+			updateTotal();
+			for (var i = 0; i < quantities.length; i++) {
+        		quantities[i].addEventListener("change", updateTotal);
+    			}
+	    
                 let cartItems = document.querySelectorAll(".cart-item");
                 let clearCartButton = document.getElementById("clear-cart");
                 let totalPriceElement = document.getElementById("total-price");
