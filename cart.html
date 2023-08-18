@@ -306,23 +306,7 @@
 </div>
 
     <script>
-        	var prices = document.getElementsByClassName("cart-item-price");
-	    	var quantities = document.getElementsByClassName("quantity");
-	    	var total = document.getElementById("total");
-		function updateTotal() {
-			var sum = 0;
-			for (var i = 0; i < prices.length; i++) {
-			var price = parseFloat(prices[i].innerText.replace("$", ""));
-            	var quantity = parseInt(quantities[i].value);	
-			sum += price * quantity;
-        		}
-			total.innerText = "Total: $" + sum.toFixed(2);
-    			}
-			updateTotal();
-			for (var i = 0; i < quantities.length; i++) {
-        		quantities[i].addEventListener("change", updateTotal);
-    			}
-	    
+        	    
                 let cartItems = document.querySelectorAll(".cart-item");
                 let clearCartButton = document.getElementById("clear-cart");
                 let totalPriceElement = document.getElementById("total-price");
