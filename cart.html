@@ -369,6 +369,7 @@
                     let incrementButton = cartItem.querySelector(".increment");
                     let decrementButton = cartItem.querySelector(".decrement");
                     let removeButton = cartItem.querySelector(".cart-item-remove");
+			calculateTotalPrice();
 
                    
                     incrementButton.addEventListener("click", function() {
@@ -404,13 +405,15 @@
                     calculateTotalPrice();
                 });
                             
-                window.onload = function() {
-
+                window.onload = function() 
+		{
 		var updateCartButton = document.getElementById("update-cart");
                 var quantities = document.getElementsByClassName("quantity");
                   
-                  for (var i = 0; i < quantities.length; i++) {
-                      quantities[i].addEventListener("change", function() {
+                  for (var i = 0; i < quantities.length; i++)
+		{
+                      quantities[i].addEventListener("change", function()
+			{
 	       		var parent = this.parentElement;
                        	var prev = parent.previousElementSibling;
                        	var price = prev.firstElementChild;
@@ -419,44 +422,49 @@
                         var unitPrice = Number(price.textContent.slice(1));
                         var subTotal = quantity * unitPrice;
                         subtotal.textContent = "$" + subTotal.toFixed(2);
-                      });
+			calculateTotalPrice();
+                      	});
                   }
                   
                 };
 
-			updateCartButton.addEventListener("click", function() {
+		updateCartButton.addEventListener("click", function()
+		{
 			var cartItems = document.querySelectorAll(".cart-item");
-			for (var i = 0; i < cartItems.length; i++) {
-				var quantityInput = cartItems[i].querySelector(".quantity");
-				var quantity = Number(quantityInput.value);
-				var productId = cartItems[i].dataset.productId;
-				$.ajax({
-            			url: "update_cart.php", 
-            			type: "POST",  
-            			data: {  
-                		product_id: productId,  
-                		quantity: quantity  
-            				},
-            			success: function(response) {  
-                 
-                		var data = JSON.parse(response);
-                
-                 
-                		if (data.success) {
-                    
+			for (var i = 0; i < cartItems.length; i++) 
+			{
+			var quantityInput = cartItems[i].querySelector(".quantity");
+			var quantity = Number(quantityInput.value);
+			var productId = cartItems[i].dataset.productId;
+			calculateTotalPrice();
+		$.ajax(
+		{
+            	url: "update_cart.php", 
+            	type: "POST",  
+            	data:
+		{  
+                product_id: productId,  
+                quantity: quantity  
+            	},
+            	success: function(response)
+			{  
+                 	 var data = JSON.parse(response);
+                		if (data.success)
+				{
                     		alert("Cart updated successfully!");
-                			} else {
-                     
-                    		alert("Cart update failed: " + data.error);
-                			}
-            				},
-            			error: function(xhr, status, error) {  
-                 
-                		alert("Cart update failed: " + error);
-            				}
-        				});
-    					}
-					});
+                		}
+				else
+				{
+                     		alert("Cart update failed: " + data.error);
+                		}
+            			},
+            			error: function(xhr, status, error)
+				{  
+	                 	alert("Cart update failed: " + error);
+            			}
+        	});
+    			}
+		});
 </script>
 
    <form>
