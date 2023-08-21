@@ -401,8 +401,9 @@
 		clearCartButton.addEventListener("click", function() {
                     for (let cartItem of cartItems) {
                         cartItem.remove();
+			calculateTotalPrice();
                     }
-                    calculateTotalPrice();
+                 
                 });
                             
                 window.onload = function() 
