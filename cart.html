@@ -104,6 +104,30 @@
             margin: 0; 
         }
 
+	.cart-item-subtotal {
+            font-weight:bold; 
+            margin-left:auto; 
+            margin-right:auto; 
+            width:auto; 
+            text-align:right; 
+            padding-right:auto; 
+            padding-left:auto; 
+            margin-top:auto; 
+            margin-bottom:auto; 
+            color:black; 
+            font-size:x-large; 
+            border:none; 
+            background-color:white; 
+            display:block; 
+            height:auto; 
+            width:auto; 
+            position:relative; 
+            left:auto; 
+            right:auto; 
+            top:auto; 
+            bottom:auto; 
+         }
+	
 </style>
 </head>
 
@@ -150,6 +174,8 @@
                     <button class="increment">+</button>
                 </div>
 
+		<p class="cart-item-subtotal">$1.00</p>
+
                 <button class="cart-item-remove">X</button>
      
 </div>
@@ -162,13 +188,16 @@
                     <h3>Blueberries</h3>
                     <p class="cart-item-price">$7.00 per container</p>
                 </div>
-            
+
+			
                 <div class="cart-item-quantity">
                     <button class="decrement">-</button>
                     <input type="number" value="1" min="0" class="quantity">
                     <button class="increment">+</button>
                 </div>
 
+		<p class="cart-item-subtotal">$7.00</p>
+	
                 <button class="cart-item-remove">X</button>
           
 </div>
@@ -187,6 +216,8 @@
                     <input type="number" value="1" min="0" class="quantity">
                     <button class="increment">+</button>
                 </div>
+
+		<p class="cart-item-subtotal">$7.00</p>
 
                 <button class="cart-item-remove">X</button>
             
@@ -207,6 +238,8 @@
                     <button class="increment">+</button>
                 </div>
 
+		<p class="cart-item-subtotal">$3.00</p>
+	
                 <button class="cart-item-remove">X</button>          
 </div>
 		
@@ -224,6 +257,8 @@
                     <input type="number" value="1" min="0" class="quantity">
                     <button class="increment">+</button>
                 </div>
+
+		<p class="cart-item-subtotal">$5.00</p>
 
                 <button class="cart-item-remove">X</button>
 </div>
@@ -243,6 +278,8 @@
                     <button class="increment">+</button>
                 </div>
 
+		<p class="cart-item-subtotal">$2.00</p>
+
                 <button class="cart-item-remove">X</button>
 </div>
 
@@ -260,6 +297,8 @@
                     <input type="number" value="1" min="0" class="quantity">
                     <button class="increment">+</button>
                 </div>
+
+		<p class="cart-item-subtotal">$5.00</p>
 
                 <button class="cart-item-remove">X</button>
 </div>
@@ -279,6 +318,8 @@
                     <button class="increment">+</button>
                 </div>
 
+		<p class="cart-item-subtotal">$7.00</p>
+
                 <button class="cart-item-remove">X</button>
 </div>
 
@@ -297,6 +338,8 @@
                     <button class="increment">+</button>
                 </div>
 
+		<p class="cart-item-subtotal">$5.00</p>
+
                 <button class="cart-item-remove">X</button>
 </div>
 
@@ -304,8 +347,7 @@
                 <h4>Total Price:</h4>
                 <p id="total-price">Total: $0.00</p>
 </div>
-
-    <script>
+<script>
         	    
                 let cartItems = document.querySelectorAll(".cart-item");
                 let clearCartButton = document.getElementById("clear-cart");
@@ -358,22 +400,39 @@
                     });
 
                 
-                    removeButton.addEventListener("click", function() {
+                removeButton.addEventListener("click", function() {
                         cartItem.remove();
                         calculateTotalPrice();
                     });
                 }
 
-            
-                clearCartButton.addEventListener("click", function() {
+		clearCartButton.addEventListener("click", function() {
                     for (let cartItem of cartItems) {
                         cartItem.remove();
                     }
                     calculateTotalPrice();
                 });
-            
-        
-    </script>
+                            
+                window.onload = function() {
+                
+                  var quantities = document.getElementsByClassName("quantity");
+                  
+                  for (var i = 0; i < quantities.length; i++) {
+                      quantities[i].addEventListener("change", function() {
+	       		var parent = this.parentElement;
+                       	var prev = parent.previousElementSibling;
+                       	var price = prev.firstElementChild;
+                       	var subtotal = parent.nextElementSibling;
+                       	var quantity = Number(this.value);        
+                        var unitPrice = Number(price.textContent.slice(1));
+                        var subTotal = quantity * unitPrice;
+                        subtotal.textContent = "$" + subTotal.toFixed(2);
+                      });
+                  }
+                  
+                };
+
+</script>
 
    <form>
       <input type="button" onclick="window.location.href='https://andrewryan94.github.io/myRepository/payment.html';" value="Check Out" />
