@@ -341,7 +341,8 @@
                 let cartItems = document.querySelectorAll(".cart-item");
                 let clearCartButton = document.getElementById("clear-cart");
                 let totalPriceElement = document.getElementById("total-price");
-
+		
+		window.onload = function() 
              
                 function calculateTotalPrice() {
                     let totalPrice = 0;
@@ -404,7 +405,7 @@
                  
                 });
                             
-                window.onload = function() 
+                
 		{
 		var updateCartButton = document.getElementById("update-cart");
                 var quantities = document.getElementsByClassName("quantity");
@@ -421,7 +422,6 @@
                         var unitPrice = Number(price.textContent.slice(1));
                         var subTotal = quantity * unitPrice;
                         subtotal.textContent = "$" + subTotal.toFixed(2);
-			calculateTotalPrice();
                       	});
                   }
                   
