@@ -120,7 +120,15 @@
         	</div>
     	</div>
 
+	<div id="cart-popup" class="cart-popup">
+		<div class="cart-header">
+			<h2>Your Cart</h2>
+			<button id="close-cart" class="close-cart-button">&times;</button>
+		</div>
+		<div class="cart-times" id="cart-items">
 		
+		</div>
+	</div>	
 	
 		
 		
@@ -131,6 +139,50 @@
 	<p><a href="index.html">Home Page</a>&nbsp; | &nbsp;<a href="aboutus.html">About Us</a>&nbsp;| &nbsp;<a href="products.html">Products</a>&nbsp; | &nbsp;<a href="cart.html">Cart</a>&nbsp; | &nbsp; <a href="contactus.html">Contact Us</a>
 	</p>
 	</footer>
+
+	<style>
+	
+	.cart-popup {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 75%;
+		height: 25%;
+		background-color: rgba(0, 0, 0, 0.5);
+		display: none;
+		justify-content: center;
+		align-items: center;
+	}
+		
+	.cart-popup.show {
+		display: flex;
+	}
+		
+	.cart-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px;
+		background-color: #f5f5f5;
+	}
+		
+	.close-cart-button {
+		background: none;
+		border: none;
+		font-size: 24px;
+		cursor: pointer;
+	}
+		
+	.cart-items {
+		background-color: white;
+		padding: 20px;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+		max-height: 80vh;
+		overflow-y: auto;
+	}
+	
+	</style>
 
 	<script>
 	
@@ -163,6 +215,41 @@
 		const cartCount = document.getElementById("cart-count");
 		cartCount.textContent = cartItems.length;
 	}
+
+	const cartPopup = document.getElementById("cart-popup");
+	const closeCartButton = document.getElementById("close-cart");
+	const cartItemsContainer = document.getElementById("cart-items");
+	
+	function showCartPopup() {
+		cartPopup.classList.add("show");
+		populateCart();
+	}
+	
+	function closeCartPopup() {
+		cartPopup.classList.remove("show");
+	}
+	
+	function populateCart() {
+		cartItemsContainer.innerHTML = "";
+
+		if (cartItems.length === 0) {
+			cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+		} else {
+			cartItems.forEach(item => {
+				const cartItem = document.createElement("div");
+				cartItem.classList.add("cart-item");
+				cartItem.innerHTML = `
+					<p>${item.name} - $${item.price.toFixed(2)}</p>
+				';
+				cartItemsContainer.appendChild(cartItem);
+			});
+		}
+	}
+	
+	const cartCount = document.getElementById("cart-count");
+	cartCount.addEventListener("click", showCartPopup);
+	
+	closeCartButton.addEventListener("click", closeCartPopup);
 	
 	</script>
 	
