@@ -342,8 +342,7 @@
                 let clearCartButton = document.getElementById("clear-cart");
                 let totalPriceElement = document.getElementById("total-price");
 		
-		window.onload = function() 
-             
+		             
                 function calculateTotalPrice() {
                     let totalPrice = 0;
 
@@ -404,12 +403,16 @@
                     }
                  
                 });
-                            
+
+		window.onload = function()
                 
 		{
 		var updateCartButton = document.getElementById("update-cart");
                 var quantities = document.getElementsByClassName("quantity");
-                  
+
+		function calculatesubTotal() {
+                    let subTotal = 0;
+			
                   for (var i = 0; i < quantities.length; i++)
 		{
                       quantities[i].addEventListener("change", function()
@@ -424,6 +427,7 @@
                         subtotal.textContent = "$" + subTotal.toFixed(2);
                       	});
                   }
+		}
                   
                 };
 
