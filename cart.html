@@ -410,9 +410,7 @@
 		var updateCartButton = document.getElementById("update-cart");
                 var quantities = document.getElementsByClassName("quantity");
 
-		function calculatesubTotal() {
-                    let subTotal = 0;
-			
+					
                   for (var i = 0; i < quantities.length; i++)
 		{
                       quantities[i].addEventListener("change", function()
@@ -427,7 +425,7 @@
                         subtotal.textContent = "$" + subTotal.toFixed(2);
                       	});
                   }
-		}
+		
                   
                 };
 
