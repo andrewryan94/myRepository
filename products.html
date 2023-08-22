@@ -131,5 +131,40 @@
 	<p><a href="index.html">Home Page</a>&nbsp; | &nbsp;<a href="aboutus.html">About Us</a>&nbsp;| &nbsp;<a href="products.html">Products</a>&nbsp; | &nbsp;<a href="cart.html">Cart</a>&nbsp; | &nbsp; <a href="contactus.html">Contact Us</a>
 	</p>
 	</footer>
+
+	<script>
+	
+	const addToCartButtons = document.querySelectorAll(".Add-to-Cart");
+	
+	let cartItems = [];
+	
+	addToCartButtons.forEach(button => {
+		button.addEventListener("click", addToCart);
+	});
+	
+	function addToCart(event) {
+		event.preventDefault();
+		
+		const productName = event.target.getAttribute("data-name");
+		const productPrice = parseFloat(event.target.getAttribute("data-price"));
+		
+		const item = {
+			name: productName,
+			price: productPrice
+		};
+		
+		cartItems.push(item);
+		
+		updateCartCount();
+		
+	}
+	
+	function updateCartCount() {
+		const cartCount = document.getElementById("cart-count");
+		cartCount.textContent = cartItems.length;
+	}
+	
+	</script>
+	
 </body>
 </html>
