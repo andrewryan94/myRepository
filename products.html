@@ -230,21 +230,22 @@
 	}
 	
 	function populateCart() {
-		cartItemsContainer.innerHTML = "";
+    	cartItemsContainer.innerHTML = "";
 
-		if (cartItems.length === 0) {
-			cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
-		} else {
-			cartItems.forEach(item => {
-				const cartItem = document.createElement("div");
-				cartItem.classList.add("cart-item");
-				cartItem.innerHTML = `
-					<p>${item.name} - $${item.price.toFixed(2)}</p>
-				';
-				cartItemsContainer.appendChild(cartItem);
-			});
-		}
-	}
+    	if (cartItems.length === 0) {
+        	cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+    	} else {
+        	cartItems.forEach(item => {
+        	   	const cartItem = document.createElement("div");
+            		cartItem.classList.add("cart-item");
+            		cartItem.innerHTML = `
+                		<p>${item.name} - $${item.price.toFixed(2)}</p>
+            	`;
+            	cartItemsContainer.appendChild(cartItem);
+        });
+    }
+}
+
 	
 	const cartCount = document.getElementById("cart-count");
 	cartCount.addEventListener("click", showCartPopup);
