@@ -117,7 +117,20 @@ let cartItems = document.querySelectorAll(".cart-item");
 let clearCartButton = document.getElementById("clear-cart");
 // Get the total price element
 let totalPriceElement = document.getElementById("total-price");
+	
+// Function to calculate the cart item sub total in the cart
+function calculateCartItemSubtotal(cartItem) {
+    let priceElement = cartItem.querySelector(".cart-item-price");
+    let quantityElement = cartItem.querySelector(".quantity");
+    let subtotalElement = cartItem.querySelector(".cart-item-subtotal");
 
+    let price = parseFloat(priceElement.innerText.replace("$", ""));
+    let quantity = parseInt(quantityElement.value);
+    let subtotal = price * quantity;
+
+    subtotalElement.innerText = "$" + subtotal.toFixed(2);
+}
+	
 // Function to calculate the total price of all items in the cart
 function calculateTotalPrice() {
     let totalPrice = 0;
@@ -167,6 +180,16 @@ for (let cartItem of cartItems) {
         }
     });
 
+	// Loop through each quantity input element
+    for (var i = 0; i < quantities.length; i++) {
+        // Add a change event listener to each quantity input
+        quantities[i].addEventListener("change", function () {
+            // ... your existing code ...
+
+            // Call the function to calculate and update subtotal
+            calculateCartItemSubtotal(parent);
+        });
+    }
     // Remove button event listener
     removeButton.addEventListener("click", function () {
         cartItem.remove();
