@@ -1,50 +1,89 @@
-	var cartContainer = document.querySelector(“.cart-container”); 
-	var cartItems = document.querySelectorAll(“.cart-item”); 
-	var clearCartButton = document.getElementById(“clear-cart”); 
-	var checkoutButton = document.getElementById(“check out”); 
-	var subtotalElement = document.querySelector(“.cart-item-subtotal”);
+	let cartItems = document.querySelectorAll(".cart-item");
+                let clearCartButton = document.getElementById("clear-cart");
+                let totalPriceElement = document.getElementById("total-price");
+	             
+                function calculateTotalPrice() {
+                    let totalPrice = 0;
+                  
+                    for (let cartItem of cartItems) {
+                        let priceElement = cartItem.querySelector(".cart-item-price");
+                        let quantityElement = cartItem.querySelector("input");
+                        let price = parseFloat(priceElement.innerText.replace("$", ""));
+                        let quantity = parseInt(quantityElement.value);
+                        totalPrice += price * quantity; 
+                    }
 
-	function calculateTotalPrice() { var totalPrice = 0; 
+                  
+                    totalPrice = Math.round(totalPrice * 100) / 100;
 
-	for (var i = 0; i < cartItems.length; i++) { var cartItem = cartItems[i]; 
-	var priceElement = cartItem.querySelector(“.cart-item-price”); 
-	var quantityElement = cartItem.querySelector(“.quantity”); 
-						    
-	var price = parseFloat(priceElement.innerText.replace(“$”, “”)); 
-	var quantity = parseInt(quantityElement.value); 
-						    
-	totalPrice += price * quantity; } 
+                   
+                    totalPriceElement.innerText = "$" + totalPrice; 
+                }
+
+              
+                for (let cartItem of cartItems) {
+                    let incrementButton = cartItem.querySelector(".increment");
+                    let decrementButton = cartItem.querySelector(".decrement");
+                    let removeButton = cartItem.querySelector(".cart-item-remove");
+			calculateTotalPrice();
+
+                   
+                    incrementButton.addEventListener("click", function() {
+                        let quantityElement = cartItem.querySelector("input");
+                        let quantity = parseInt(quantityElement.value);
+                        quantity++;
+                        quantityElement.value = quantity;
+                        calculateTotalPrice();
+                    });
+
+                  
+                    decrementButton.addEventListener("click", function() {
+                        let quantityElement = cartItem.querySelector("input");
+                        let quantity = parseInt(quantityElement.value);
+                        if (quantity > 1) {
+                            quantity--;
+                            quantityElement.value = quantity;
+                            calculateTotalPrice();
+                        }
+                    });
+
+                
+                removeButton.addEventListener("click", function() {
+                        cartItem.remove();
+                        calculateTotalPrice();
+                    });
+                }
+
+		clearCartButton.addEventListener("click", function() {
+                    for (let cartItem of cartItems) {
+                        cartItem.remove();
+			calculateTotalPrice();
+                    }
+                 
+                });
+
+		window.onload = function()
+                
+		{
+		var updateCartButton = document.getElementById("update-cart");
+                var quantities = document.getElementsByClassName("quantity");
+
 					
-	return totalPrice.toFixed(2); }
-
-	function updateSubtotal() { var totalPrice = calculateTotalPrice();
-	subtotalElement.innerText = “$” + totalPrice; }
-
-	function removeCartItem(event) { 
+                  for (var i = 0; i < quantities.length; i++)
+		{
+                      quantities[i].addEventListener("change", function()
+			{
+	       		var parent = this.parentElement;
+                       	var prev = parent.previousElementSibling;
+                       	var price = prev.firstElementChild;
+                       	var subtotal = parent.nextElementSibling;
+                       	var quantity = Number(this.value);        
+                        var unitPrice = Number(price.textContent.slice(1));
+                        var subTotal = quantity * unitPrice;
+                        subtotal.textContent = "$" + subTotal.toFixed(2);
+                      	});
+                  }
 		
-	var buttonClicked = event.target; 
-		
-	var cartItem = buttonClicked.parentElement; 
-		
-	cartContainer.removeChild(cartItem); 
-		
-	updateSubtotal(); }
+                  
+                };
 
-	function clearCart() { 
-
-	for (var i = 0; i < cartItems.length; i++) { var cartItem = cartItems[i];
-	cartContainer.removeChild(cartItem); } 
-		
-	updateSubtotal(); }
-
-	clearCartButton.addEventListener(“click”, clearCart);
-
-	for (var i = 0; i < cartItems.length; i++) { var cartItem = cartItems[i];
-	var removeButton = cartItem.querySelector(“.cart-item-remove”);
-	removeButton.addEventListener(“click”, removeCartItem); }
-
-	for (var i = 0; i < cartItems.length; i++) { var cartItem = cartItems[i];
-	var quantityInput = cartItem.querySelector(“.quantity”); 
-	quantityInput.addEventListener(“change”, updateSubtotal); }
-
-	updateSubtotal();
