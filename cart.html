@@ -109,6 +109,8 @@
 	<p><a href="index.html">Home Page</a>&nbsp; | &nbsp;<a href="aboutus.html">About Us</a>&nbsp;| &nbsp;<a href="products.html">Products</a>&nbsp; | &nbsp;<a href="cart.html">Cart</a>&nbsp; | &nbsp;<a href="contactus.html">Contact Us</a></p>
 	</footer>
 <script>
+// Wait for the window to load
+window.onload = function () {
 // Get all cart item elements
 let cartItems = document.querySelectorAll(".cart-item");
 // Get the clear cart button element
@@ -180,8 +182,7 @@ clearCartButton.addEventListener("click", function () {
     }
 });
 
-// Wait for the window to load
-window.onload = function () {
+
     var updateCartButton = document.getElementById("update-cart");
     var quantities = document.getElementsByClassName("quantity");
 
@@ -199,6 +200,8 @@ window.onload = function () {
             subtotal.textContent = "$" + subTotal.toFixed(2);
         });
     }
+// Calculate the initial total price
+            calculateTotalPrice();
 };
 </script>
 </body>
