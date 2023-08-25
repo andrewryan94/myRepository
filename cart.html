@@ -111,42 +111,32 @@
 <script>
 // Wait for the window to load
 window.onload = function () {
-// Get all cart item elements
-let cartItems = document.querySelectorAll(".cart-item");
-// Get the clear cart button element
-let clearCartButton = document.getElementById("clear-cart");
-// Get the total price element
-let totalPriceElement = document.getElementById("total-price");
-	
-// Function to calculate the cart item sub total in the cart
-function calculateCartItemSubtotal(cartItem) {
-    let priceElement = cartItem.querySelector(".cart-item-price");
-    let quantityElement = cartItem.querySelector(".quantity");
-    let subtotalElement = cartItem.querySelector(".cart-item-subtotal");
+    // Get all cart item elements
+    let cartItems = document.querySelectorAll(".cart-item");
+    // Get the clear cart button element
+    let clearCartButton = document.getElementById("clear-cart");
+    // Get the total price element
+    let totalPriceElement = document.getElementById("total-price");
 
-    let price = parseFloat(priceElement.innerText.replace("$", ""));
-    let quantity = parseInt(quantityElement.value);
-    let subtotal = price * quantity;
-// Update the subtotal element on the page
-	subtotalElement.innerText = "$" + subtotal.toFixed(2);
-// Return the calculated subtotal
-	return subtotal;
+    // Function to calculate the cart item sub total in the cart
+    function calculateCartItemSubtotal(cartItem) {
+        let priceElement = cartItem.querySelector(".cart-item-price");
+        let quantityElement = cartItem.querySelector(".quantity");
+        let subtotalElement = cartItem.querySelector(".cart-item-subtotal");
 
-    subtotalElement.innerText = "$" + subtotal.toFixed(2);
-}
+        let price = parseFloat(priceElement.innerText.replace("$", ""));
+        let quantity = parseInt(quantityElement.value);
+        let subtotal = price * quantity;
+
+        subtotalElement.innerText = "$" + subtotal.toFixed(2);
+
+        return subtotal;
+    }
 	
 // Function to calculate the total price of all items in the cart
 function calculateTotalPrice() {
     let totalPrice = 0;
 
-    // Loop through each cart item
-    for (let cartItem of cartItems) {
-        let priceElement = cartItem.querySelector(".cart-item-price");
-        let quantityElement = cartItem.querySelector("input");
-        let price = parseFloat(priceElement.innerText.replace("$", ""));
-        let quantity = parseInt(quantityElement.value);
-        totalPrice += price * quantity;
-    }
 // Loop through each cart item
     for (let cartItem of cartItems) {
         let subtotalElement = cartItem.querySelector(".cart-item-subtotal");
@@ -197,18 +187,17 @@ for (let cartItem of cartItems) {
             calculateTotalPrice();
         }
     });
-
-	// Loop through each quantity input element
-    for (var i = 0; i < quantities.length; i++) {
-        // Add a change event listener to each quantity input
-        quantities[i].addEventListener("change", function () {
-            // ... your existing code ...
-
-            // Call the function to calculate and update subtotal
-            calculateCartItemSubtotal(parent);
-        });
-    }
-    // Remove button event listener
+ // Add a change event listener to each quantity input
+        let quantities = cartItem.getElementsByClassName("quantity");
+        for (var i = 0; i < quantities.length; i++) {
+            quantities[i].addEventListener("change", function () {
+                let parent = this.parentElement.parentElement; // Go up to the cart item
+                let subtotal = calculateCartItemSubtotal(parent);
+                calculateTotalPrice(); // Update total price based on new subtotals
+            });
+	}
+	
+ // Remove button event listener
     removeButton.addEventListener("click", function () {
         cartItem.remove();
         calculateTotalPrice();
@@ -223,27 +212,6 @@ clearCartButton.addEventListener("click", function () {
     }
 });
 
-
-    var updateCartButton = document.getElementById("update-cart");
-    var quantities = document.getElementsByClassName("quantity");
-
-    // Loop through each quantity input element
-    for (var i = 0; i < quantities.length; i++) {
-        // Add a change event listener to each quantity input
-        quantities[i].addEventListener("change", function () {
-            var parent = this.parentElement;
-            var prev = parent.previousElementSibling;
-            var price = prev.firstElementChild;
-            var subtotal = parent.nextElementSibling;
-            var quantity = Number(this.value);
-            var unitPrice = Number(price.textContent.slice(1));
-            var subTotal = quantity * unitPrice;
-            subtotal.textContent = "$" + subTotal.toFixed(2);
-        });
-    }
-// Calculate the initial total price
-            calculateTotalPrice();
-};
 </script>
 </body>
 </html>
