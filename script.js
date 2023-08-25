@@ -1,4 +1,3 @@
-<script>
 	var cartContainer = document.querySelector(“.cart-container”); 
 	var cartItems = document.querySelectorAll(“.cart-item”); 
 	var clearCartButton = document.getElementById(“clear-cart”); 
@@ -49,4 +48,3 @@
 	quantityInput.addEventListener(“change”, updateSubtotal); }
 
 	updateSubtotal();
-</script>
