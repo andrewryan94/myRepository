@@ -73,11 +73,11 @@
             	cursor: pointer;
         }
 
-        <!-- .cart-item-quantity input {
+         .cart-item-quantity input {
             	width: 50px;
             	height: 30px;
             	text-align: center;
-        } -->
+        } 
 
         .cart-item-remove {
             	width: 30px;
@@ -158,9 +158,9 @@
                 </div>
             
                 <div class="cart-item-quantity">
-                    <button class="decrement">-</button>
-                    <input type="number" value="1" min="0" class="quantity">
-                    <button class="increment">+</button>
+                    <button class="decrement" type="number" value="0" min="0" max="9999" class="quantity">-</button>
+                    <! --- <input type="number" value="1" min="0" class="quantity"> --->
+                    <button class="increment" type="number" value="0" min="0" max="9999" class="quantity">+</button>
                 </div>
 
 		<p class="cart-item-subtotal">$1.00</p>
@@ -334,7 +334,7 @@
 
 <div class="cart-footer">             
                 <h4 style="color:black; font-size: 20px;">Total Price:</h4>
-                <p id="total-price">Total: $0.00</p>
+                <p id="total-price" style="color:black; font-size: 20px;">Total: $0.00</p>
 </div>
 <script>
         	    
