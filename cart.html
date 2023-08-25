@@ -2,131 +2,32 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-		<title>EZ Shop - Cart</title>
-		<link rel="stylesheet" type="text/css" href="styles.css">
-		<script src="script.js"></script>
+	<meta charset="utf-8"> <title>EZ Shop - Cart</title> <link rel="stylesheet" type="text/css" href="styles.css"> <script src="script.js"></script>
 
 <style>
-
-	cart-container {
-            	width: 80%;
-            	margin: auto;
-            	border: 1px solid black;
-	    	display: flex;
-	    	flex-wrap: wrap;
-        }
-
-        .cart-header {
-            	display: flex;
-            	justify-content: space-between;
-            	align-items: center;
-            	padding: 10px;
-        }
-
-        .cart-header h1 {
-            	margin: 0;
-        }
-
-        .cart-header button {
-            	background-color: lightgray;
-            	color: black;
-            	border: none;
-            	padding: 10px 20px;
-            	cursor: pointer;
-        }
-
-        .cart-item {
-            	display: flex;
-            	justify-content: space-between;
-            	align-items: center;
-            	padding: 10px;
-            	border-bottom: 1px solid black;
-	    	margin: 10px;
-        }
-
-        .cart-item img {
-            	width: 270px;
-            	height: 300px;
-        }
-
-        .cart-item-info {
-            	display: flex;
-            	flex-direction: column;
-	    	margin-left: 10px;
-        }
-
-        .cart-item-price {
-            	font-weight: bold;
-	}
-
-        .cart-item-quantity {
-            	display: flex;
-            	align-items: center;
-        }
-
-        .cart-item-quantity button {
-            	width: 30px;
-            	height: 30px;
-            	background-color: lightgray;
-            	border: none;
-            	font-weight: bold;
-            	cursor: pointer;
-        }
-
-         .cart-item-quantity input {
-            	width: 50px;
-            	height: 30px;
-            	text-align: center;
-        } 
-
-        .cart-item-remove {
-            	width: 30px;
-            	height: 30px;
-            	background-color: red;
-            	color: white;
-            	border: none;
-            	font-weight: bold;
-            	cursor: pointer;
-	    	margin-top: auto;
-        }
-
-        .cart-footer {
-            	display: flex;
-            	justify-content: flex-end;
-            	align-items: center;
-            	padding-right: 10%; 
-	    	padding-bottom: 10%;
-		width: 80%;
-		margin: auto;
-        }
-
-        .cart-footer h2 {
-            margin: 0; 
-        }
-
-	.cart-item-subtotal {
-            font-weight:bold; 
-            text-align:right; 
-            color:black; 
-            font-size:x-large; 
-            border:none; 
-            display:block; 
-            position:relative; 
-            
-         }
-	
+	.cart-container {width: 80%; margin: auto; border: 1px solid black; display: flex; flex-wrap: wrap;}
+        .cart-header {display: flex; justify-content: space-between; align-items: center; padding: 10px;}
+        .cart-header h1 {margin: 0;}
+        .cart-header button {background-color: lightgray; color: black; border: none; padding: 10px 20px; cursor: pointer;}
+        .cart-item {display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid black;margin: 10px;}
+        .cart-item img {width: 270px; height: 300px;}
+        .cart-item-info {display: flex;flex-direction: column; margin-left: 10px;}
+        .cart-item-price {font-weight: bold;}
+        .cart-item-quantity {display: flex; align-items: center;}
+        .cart-item-quantity button {width: 30px; height: 30px; background-color: lightgray; border: none; font-weight: bold; cursor: pointer;}
+        .cart-item-quantity input {width: 50px; height: 30px; text-align: center;} 
+        .cart-item-remove {width: 30px; height: 30px; background-color: red; color: white; border: none; font-weight: bold; cursor: pointer; margin-top: auto;}
+        .cart-footer {display: flex; justify-content: flex-end; align-items: center; padding-right: 10%; padding-bottom: 10%; width: 80%; margin: auto;}
+        .cart-footer h2 {margin: 0;}
+	.cart-item-subtotal {font-weight:bold; text-align:right; color:black; font-size:x-large; border:none; display:block; position:relative;}
 </style>
 </head>
 
 <body id="container">
-			 
-	<header>
-		<img src="images/logo.png" alt="EZ Shop logo" 	width="150" height="150">
-
-		<h1>Cart</h1>
-	</header>
-
+<header>
+	<img src="images/logo.png" alt="EZ Shop logo" 	width="150" height="150">
+<h1>Cart</h1>
+</header>
 <nav>
 	<ul>
 	<li><a href="index.html">Home Page</a></li>
@@ -136,290 +37,134 @@
 	<li><a href="contactus.html">Contact Us</a></li>
 	</ul>
 </nav>
-
 <main>
 	<h1 style="color:black">Shopping Cart</h1>
-
-<div class="cart-container">
- <div class="cart-header">
-     
- 	<button id="clear-cart">Clear Cart</button>
+	<div class="cart-container">
+ 	<div class="cart-header">
+      	<button id="clear-cart">Clear Cart</button>
 	<button id="check out" onclick="window.location.href='https://andrewryan94.github.io/myRepository/payment.html';">Check Out</button>
-</div>
-</div>
-	
-		 
-<div class="cart-item">
-            
-                <img src="images/Bananas.jpeg" alt="Bananas">
-            
-                <div class="cart-item-info">
-                    <h3>Bananas</h3>
-                    <p class="cart-item-price">$1.00 each</p>
-                </div>
-            
-                <div class="cart-item-quantity">
-                   <!-- <button class="decrement">-</button> -->
-                    <input type="number" value="0" min="0" max="9999" class="quantity"> 
-                   <!-- <button class="increment" type="number" value="0" min="0" max="9999" class="quantity">+</button> -->
-                </div>
-
-		<p class="cart-item-subtotal">$1.00</p>
-
-                <button class="cart-item-remove">X</button>
-     
-</div>
-
-<div class="cart-item">
-            
-                <img src="images/Blueberries.jpeg" alt="Blueberries">
-            
-                <div class="cart-item-info">
-                    <h3>Blueberries</h3>
-                    <p class="cart-item-price">$7.00 per container</p>
-                </div>
-
-			
-                <div class="cart-item-quantity">
-                   <!-- <button class="decrement">-</button>  -->
-                    <input type="number" value="0" min="0" max="9999" class="quantity">
-                   <!-- <button class="increment">+</button> -->
-                </div>
-
-		<p class="cart-item-subtotal">$7.00</p>
-	
-                <button class="cart-item-remove">X</button>
-          
-</div>
-
-<div class="cart-item">
-            
-                <img src="images/Cotton Candy Grapes.jpeg" alt="Cotton Candy Grapes">
-            
-                <div class="cart-item-info">
-                    <h3>Cotton Candy Grapes</h3>
-                    <p class="cart-item-price">$7.00 per container</p>
-                </div>
-            
-                <div class="cart-item-quantity">
-                   <!--  <button class="decrement">-</button> -->
-                    <input type="number" value="0" min="0" max="9999" class="quantity">
-                   <!--  <button class="increment">+</button> -->
-                </div>
-
-		<p class="cart-item-subtotal">$7.00</p>
-
-                <button class="cart-item-remove">X</button>
-            
-</div>
-
-<div class="cart-item">
-            
-                <img src="images/Guava.jpeg" alt="Guava">
-            
-                <div class="cart-item-info">
-                    <h3>Guava</h3>
-                    <p class="cart-item-price">$3.00 each</p>
-                </div>
-            
-                <div class="cart-item-quantity">
-                 <!--    <button class="decrement">-</button> -->
-                    <input type="number" value="0" min="0" max="9999" class="quantity">
-                 <!--    <button class="increment">+</button> -->
-                </div>
-
-		<p class="cart-item-subtotal">$3.00</p>
-	
-                <button class="cart-item-remove">X</button>          
-</div>
-		
-<div class="cart-item">
-            
-                <img src="images/Lychee.jpeg" alt="Lychee">
-            
-                <div class="cart-item-info">
-                    <h3>Lychee</h3>
-                    <p class="cart-item-price">$5.00 per container</p>
-                </div>
-            
-                <div class="cart-item-quantity">
-                     <!--<button class="decrement">-</button> -->
-                    <input type="number" value="0" min="0" max="9999" class="quantity">
-                     <!--<button class="increment">+</button> -->
-                </div>
-
-		<p class="cart-item-subtotal">$5.00</p>
-
-                <button class="cart-item-remove">X</button>
-</div>
-
-<div class="cart-item">
-            
-                <img src="images/Mango.jpeg" alt="Mango">
-            
-                <div class="cart-item-info">
-                    <h3>Mango</h3>
-                    <p class="cart-item-price">$2.00 each</p>
-                </div>
-            
-                <div class="cart-item-quantity">
-                    <!-- <button class="decrement">-</button> -->
-                    <input type="number" value="0" min="0" max="9999" class="quantity">
-                     <!--<button class="increment">+</button> -->
-                </div>
-
-		<p class="cart-item-subtotal">$2.00</p>
-
-                <button class="cart-item-remove">X</button>
-</div>
-
-<div class="cart-item">
-            
-                <img src="images/Pink Pineapples.jpeg" alt="Pink Pineapples">
-            
-                <div class="cart-item-info">
-                    <h3>Pink Pineapples</h3>
-                    <p class="cart-item-price">$5.00 each</p>
-                </div>
-            
-                <div class="cart-item-quantity">
-                    <!-- <button class="decrement">-</button> -->
-                    <input type="number" value="0" min="0" max="9999" class="quantity">
-                     <!--<button class="increment">+</button> -->
-                </div>
-
-		<p class="cart-item-subtotal">$5.00</p>
-
-                <button class="cart-item-remove">X</button>
-</div>
-
-<div class="cart-item">
-            
-                <img src="images/Strawberries.jpeg" alt="Strawberries">
-            
-                <div class="cart-item-info">
-                    <h3>Strawberries</h3>
-                    <p class="cart-item-price">$7.00 per container</p>
-                </div>
-            
-                <div class="cart-item-quantity">
-                     <!--<button class="decrement">-</button> -->
-                    <input type="number" value="0" min="0" max="9999" class="quantity">
-                     <!--<button class="increment">+</button> -->
-                </div>
-
-		<p class="cart-item-subtotal">$7.00</p>
-
-                <button class="cart-item-remove">X</button>
-</div>
-
-<div class="cart-item">
-            
-                <img src="images/Yellow Dragon Fruit.jpeg" alt="Yellow Dragon Fruit">
-            
-                <div class="cart-item-info">
-                    <h3>Yellow Dragon Fruit</h3>
-                    <p class="cart-item-price">$5.00 each</p>
-                </div>
-            
-                <div class="cart-item-quantity">
-                    <!-- <button class="decrement">-</button> -->
-                    <input type="number" value="0" min="0" max="9999" class="quantity">
-                    <!-- <button class="increment">+</button> -->
-                </div>
-
-		<p class="cart-item-subtotal">$5.00</p>
-
-                <button class="cart-item-remove">X</button>
-</div>
-
-<div class="cart-footer">             
-                <h4 style="color:black; font-size: 20px;">Total Price:</h4>
-                <h4 id="total-price">Total: $0.00</h4>
-</div>
+	</div>
+	</div>
+	<div class="cart-item">
+        <img src="images/Bananas.jpeg" alt="Bananas">
+        <div class="cart-item-info"><h3>Bananas</h3><p class="cart-item-price">$1.00 each</p></div>
+        <div class="cart-item-quantity"><input type="number" value="0" min="0" max="9999" class="quantity"></div>
+	<p class="cart-item-subtotal">$1.00</p>
+        <button class="cart-item-remove">X</button>
+	</div>
+	<div class="cart-item">
+        <img src="images/Blueberries.jpeg" alt="Blueberries">
+        <div class="cart-item-info"><h3>Blueberries</h3><p class="cart-item-price">$7.00 per container</p></div>
+	<div class="cart-item-quantity"><input type="number" value="0" min="0" max="9999" class="quantity"></div>
+	<p class="cart-item-subtotal">$7.00</p>
+	<button class="cart-item-remove">X</button>
+	</div>
+	<div class="cart-item">
+        <img src="images/Cotton Candy Grapes.jpeg" alt="Cotton Candy Grapes">
+        <div class="cart-item-info"><h3>Cotton Candy Grapes</h3><p class="cart-item-price">$7.00 per container</p></div>
+        <div class="cart-item-quantity"><input type="number" value="0" min="0" max="9999" class="quantity"></div>
+	<p class="cart-item-subtotal">$7.00</p>
+	<button class="cart-item-remove">X</button>
+	</div>
+	<div class="cart-item">
+        <img src="images/Guava.jpeg" alt="Guava">
+        <div class="cart-item-info"><h3>Guava</h3><p class="cart-item-price">$3.00 each</p></div>
+        <div class="cart-item-quantity"><input type="number" value="0" min="0" max="9999" class="quantity"></div>
+	<p class="cart-item-subtotal">$3.00</p>
+	<button class="cart-item-remove">X</button>          
+	</div>	
+	<div class="cart-item">
+        <img src="images/Lychee.jpeg" alt="Lychee">
+        <div class="cart-item-info"><h3>Lychee</h3><p class="cart-item-price">$5.00 per container</p></div>
+        <div class="cart-item-quantity"><input type="number" value="0" min="0" max="9999" class="quantity"></div>
+	<p class="cart-item-subtotal">$5.00</p>
+	<button class="cart-item-remove">X</button>
+	</div>
+	<div class="cart-item">
+        <img src="images/Mango.jpeg" alt="Mango">
+        <div class="cart-item-info"><h3>Mango</h3><p class="cart-item-price">$2.00 each</p></div>
+        <div class="cart-item-quantity"><input type="number" value="0" min="0" max="9999" class="quantity"></div>
+	<p class="cart-item-subtotal">$2.00</p>
+	<button class="cart-item-remove">X</button>
+	</div>
+	<div class="cart-item">
+        <img src="images/Pink Pineapples.jpeg" alt="Pink Pineapples">
+        <div class="cart-item-info"><h3>Pink Pineapples</h3><p class="cart-item-price">$5.00 each</p></div>
+        <div class="cart-item-quantity"><input type="number" value="0" min="0" max="9999" class="quantity"></div>
+	<p class="cart-item-subtotal">$5.00</p>
+	<button class="cart-item-remove">X</button>
+	</div>
+	<div class="cart-item">
+        <img src="images/Strawberries.jpeg" alt="Strawberries">
+        <div class="cart-item-info"><h3>Strawberries</h3><p class="cart-item-price">$7.00 per container</p></div>
+        <div class="cart-item-quantity"><input type="number" value="0" min="0" max="9999" class="quantity"></div>
+	<p class="cart-item-subtotal">$7.00</p>
+	<button class="cart-item-remove">X</button>
+	</div>
+	<div class="cart-item">
+        <img src="images/Yellow Dragon Fruit.jpeg" alt="Yellow Dragon Fruit">
+        <div class="cart-item-info"><h3>Yellow Dragon Fruit</h3><p class="cart-item-price">$5.00 each</p></div>
+        <div class="cart-item-quantity"><input type="number" value="0" min="0" max="9999" class="quantity"></div>
+	<p class="cart-item-subtotal">$5.00</p>
+	<button class="cart-item-remove">X</button>
+	</div>
+	<div class="cart-footer"><h4 style="color:black; font-size: 20px;">Total Price:</h4><h4 id="total-price">Total: $0.00</h4></div>
 <script>
-// Get the elements from the HTML document 
 	var cartContainer = document.querySelector(“.cart-container”); 
 	var cartItems = document.querySelectorAll(“.cart-item”); 
 	var clearCartButton = document.getElementById(“clear-cart”); 
 	var checkoutButton = document.getElementById(“check out”); 
 	var subtotalElement = document.querySelector(“.cart-item-subtotal”);
 
-// Define a function to calculate the total price of the cart
 	function calculateTotalPrice() { var totalPrice = 0; 
 
-// Loop through each cart item and get its price and quantity 
 	for (var i = 0; i < cartItems.length; i++) { var cartItem = cartItems[i]; 
 	var priceElement = cartItem.querySelector(“.cart-item-price”); 
 	var quantityElement = cartItem.querySelector(“.quantity”); 
 						    
-// Get the numerical values of the price and quantity 
 	var price = parseFloat(priceElement.innerText.replace(“$”, “”)); 
 	var quantity = parseInt(quantityElement.value); 
 						    
-// Add the product of the price and quantity to the total price 
 	totalPrice += price * quantity; } 
 					
-// Return the total price rounded to two decimal places 
 	return totalPrice.toFixed(2); }
 
-// Define a function to update the subtotal element with the total price
 	function updateSubtotal() { var totalPrice = calculateTotalPrice();
 	subtotalElement.innerText = “$” + totalPrice; }
 
-// Define a function to remove a cart item from the cart container 
 	function removeCartItem(event) { 
 		
-// Get the element that triggered the event 
 	var buttonClicked = event.target; 
 		
-// Get the parent element of the button, which is the cart item 
 	var cartItem = buttonClicked.parentElement; 
 		
-// Remove the cart item from the cart container 
 	cartContainer.removeChild(cartItem); 
 		
-// Update the subtotal element 
 	updateSubtotal(); }
 
-// Define a function to clear all the cart items from the cart container
 	function clearCart() { 
-		
-// Loop through each cart item and remove it from the cart container 
+
 	for (var i = 0; i < cartItems.length; i++) { var cartItem = cartItems[i];
 	cartContainer.removeChild(cartItem); } 
 		
-// Update the subtotal element 
 	updateSubtotal(); }
 
-// Add an event listener to the clear cart button to call the clearCart function when clicked 
 	clearCartButton.addEventListener(“click”, clearCart);
 
-// Add an event listener to each remove button to call the removeCartItem function when clicked 
 	for (var i = 0; i < cartItems.length; i++) { var cartItem = cartItems[i];
 	var removeButton = cartItem.querySelector(“.cart-item-remove”);
 	removeButton.addEventListener(“click”, removeCartItem); }
 
-// Add an event listener to each quantity input to call the updateSubtotal function when changed 
 	for (var i = 0; i < cartItems.length; i++) { var cartItem = cartItems[i];
 	var quantityInput = cartItem.querySelector(“.quantity”); 
 	quantityInput.addEventListener(“change”, updateSubtotal); }
 
-// Call the updateSubtotal function once at the beginning to initialize the subtotal element
 	updateSubtotal();
-
 </script>
-
-   
-      <input type="button" class="button" onclick="window.location.href='https://andrewryan94.github.io/myRepository/payment.html';" value="Check Out">
-   
-
+     <input type="button" class="button" onclick="window.location.href='https://andrewryan94.github.io/myRepository/payment.html';" value="Check Out">
 </main>
-
 	<footer>
 	<p><a href="index.html">Home Page</a>&nbsp; | &nbsp;<a href="aboutus.html">About Us</a>&nbsp;| &nbsp;<a href="products.html">Products</a>&nbsp; | &nbsp;<a href="cart.html">Cart</a>&nbsp; | &nbsp;<a href="contactus.html">Contact Us</a></p>
 	</footer>
-
 </body>
-
 </html>
