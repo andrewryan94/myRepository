@@ -44,7 +44,7 @@
         	<h2 style="margin-top: 10px;">Bananas</h2>
         	<div class="product-details">
         		<p class="card-text">Price: $1.00/each</p>
-            		<a href="#" data-name="Bananas" data-price="0.00" class="Add-to-Cart button">Add to cart</a>
+            		<a href="#" data-name="Bananas" data-price="1.00" class="Add-to-Cart button">Add to cart</a>
         	</div>
     	</div>
 
@@ -53,7 +53,7 @@
         	<h2 style="margin-top: 10px;">Blueberries</h2>
         	<div class="product-details">
         		<p class="card-text">Price: $7.00/container</p>
-            		<a href="#" data-name="Blueberries" data-price="0.00" class="Add-to-Cart button">Add to cart</a>
+            		<a href="https://andrewryan94.github.io/myRepository/cart.html" data-name="Blueberries" data-price="0.00" class="Add-to-Cart button">Add to cart</a>
         	</div>
     	</div>
 
@@ -62,7 +62,7 @@
         	<h2 style="margin-top: 10px;">Cotton Candy Grapes</h2>
         	<div class="product-details">
         		<p class="card-text">Price: $7.00/container</p>
-            		<a href="#" data-name="Cotton Candy Grapes" data-price="0.00" class="Add-to-Cart button">Add to cart</a>
+            		<a href="https://andrewryan94.github.io/myRepository/cart.html" data-name="Cotton Candy Grapes" data-price="7.00" class="Add-to-Cart button">Add to cart</a>
         	</div>
     	</div>
 
@@ -71,7 +71,7 @@
         	<h2 style="margin-top: 10px;">Guava</h2>
         	<div class="product-details">
         		<p class="card-text">Price: $3.00/each</p>
-            		<a href="#" data-name="Guava" data-price="0.00" class="Add-to-Cart button">Add to cart</a>
+            		<a href="https://andrewryan94.github.io/myRepository/cart.html" data-name="Guava" data-price="3.00" class="Add-to-Cart button">Add to cart</a>
         	</div>
     	</div>
 
@@ -80,7 +80,7 @@
         	<h2 style="margin-top: 10px;">Lychee</h2>
         	<div class="product-details">
         		<p class="card-text">Price: $5.00/container</p>
-            		<a href="#" data-name="Lychee" data-price="0.00" class="Add-to-Cart button">Add to cart</a>
+            		<a href="https://andrewryan94.github.io/myRepository/cart.html" data-name="Lychee" data-price="5.00" class="Add-to-Cart button">Add to cart</a>
         	</div>
     	</div>
 
@@ -89,7 +89,7 @@
         	<h2 style="margin-top: 10px;">Mango</h2>
         	<div class="product-details">
         		<p class="card-text">Price: $2.00/each</p>
-            		<a href="#" data-name="Mango" data-price="0.00" class="Add-to-Cart button">Add to cart</a>
+            		<a href="https://andrewryan94.github.io/myRepository/cart.html" data-name="Mango" data-price="2.00" class="Add-to-Cart button">Add to cart</a>
         	</div>
     	</div>
 
@@ -98,7 +98,7 @@
         	<h2 style="margin-top: 10px;">Pink Pineapples</h2>
         	<div class="product-details">
         		<p class="card-text">Price: $5.00/each</p>
-            		<a href="#" data-name="Pink Pineapples" data-price="0.00" class="Add-to-Cart button">Add to cart</a>
+            		<a href="https://andrewryan94.github.io/myRepository/cart.html" data-name="Pink Pineapples" data-price="5.00" class="Add-to-Cart button">Add to cart</a>
         	</div>
     	</div>
 
@@ -107,7 +107,7 @@
         	<h2 style="margin-top: 10px;">Strawberries</h2>
         	<div class="product-details">
         		<p class="card-text">Price: $7.00/container</p>
-            		<a href="#" data-name="Strawberries" data-price="0.00" class="Add-to-Cart button">Add to cart</a>
+            		<a href="https://andrewryan94.github.io/myRepository/cart.html" data-name="Strawberries" data-price="7.00" class="Add-to-Cart button">Add to cart</a>
         	</div>
     	</div>
 
@@ -116,22 +116,11 @@
         	<h2 style="margin-top: 10px;">Yellow Dragon Fruit</h2>
         	<div class="product-details">
         		<p class="card-text">Price: $5.00/each</p>
-            		<a href="#" data-name="Yellow Dragon Fruit" data-price="0.00" class="Add-to-Cart button">Add to cart</a>
+            		<a href="https://andrewryan94.github.io/myRepository/cart.html" data-name="Yellow Dragon Fruit" data-price="5.00" class="Add-to-Cart button">Add to cart</a>
         	</div>
     	</div>
 
-	<div id="cart-popup" class="cart-popup">
-		<div class="cart-header">
-			<h2>Your Cart</h2>
-			<button id="close-cart" class="close-cart-button">&times;</button>
-		</div>
-		<div class="cart-times" id="cart-items">
-		
-		</div>
-	</div>	
 	
-		
-		
 	<br><br>
 	</main>
 	
@@ -140,119 +129,6 @@
 	</p>
 	</footer>
 
-	<style>
-	
-	.cart-popup {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 75%;
-		height: 25%;
-		background-color: rgba(0, 0, 0, 0.5);
-		display: none;
-		justify-content: center;
-		align-items: center;
-	}
 		
-	.cart-popup.show {
-		display: flex;
-	}
-		
-	.cart-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 10px;
-		background-color: #f5f5f5;
-	}
-		
-	.close-cart-button {
-		background: none;
-		border: none;
-		font-size: 24px;
-		cursor: pointer;
-	}
-		
-	.cart-items {
-		background-color: white;
-		padding: 20px;
-		border-radius: 5px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
-		max-height: 80vh;
-		overflow-y: auto;
-	}
-	
-	</style>
-
-	<script>
-	
-	const addToCartButtons = document.querySelectorAll(".Add-to-Cart");
-	
-	let cartItems = [];
-	
-	addToCartButtons.forEach(button => {
-		button.addEventListener("click", addToCart);
-	});
-	
-	function addToCart(event) {
-		event.preventDefault();
-		
-		const productName = event.target.getAttribute("data-name");
-		const productPrice = parseFloat(event.target.getAttribute("data-price"));
-		
-		const item = {
-			name: productName,
-			price: productPrice
-		};
-		
-		cartItems.push(item);
-		
-		updateCartCount();
-		
-	}
-	
-	function updateCartCount() {
-		const cartCount = document.getElementById("cart-count");
-		cartCount.textContent = cartItems.length;
-	}
-
-	const cartPopup = document.getElementById("cart-popup");
-	const closeCartButton = document.getElementById("close-cart");
-	const cartItemsContainer = document.getElementById("cart-items");
-	
-	function showCartPopup() {
-		cartPopup.classList.add("show");
-		populateCart();
-	}
-	
-	function closeCartPopup() {
-		cartPopup.classList.remove("show");
-	}
-	
-	function populateCart() {
-    	cartItemsContainer.innerHTML = "";
-
-    	if (cartItems.length === 0) {
-        	cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
-    	} else {
-        	cartItems.forEach(item => {
-        	   	const cartItem = document.createElement("div");
-            		cartItem.classList.add("cart-item");
-            		cartItem.innerHTML = `
-                		<p>${item.name} - $${item.price.toFixed(2)}</p>
-            	`;
-            	cartItemsContainer.appendChild(cartItem);
-        });
-    }
-}
-
-	
-	const cartCount = document.getElementById("cart-count");
-	cartCount.addEventListener("click", showCartPopup);
-	
-	closeCartButton.addEventListener("click", closeCartPopup);
-	
-	</script>
-	
 </body>
 </html>
