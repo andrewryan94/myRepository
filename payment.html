@@ -66,7 +66,16 @@
            	 width: auto; 
             	margin-right: 10px; 
         	}
-	
+    		#cvv, #expDate {
+       		width: 100px; 
+   		}
+		#cardNumber {
+		width: 200px;
+		}
+		#billingAddress {
+		width: 400px;
+		}
+
 		</style>
 	</head>
 
@@ -103,14 +112,13 @@
         <div class="horizontal-fields">
             <label>Card Number</label>
             <input type="number" name="cardNumber" id="cardNumber" required>
-            
-            <label>CVV</label>
-            <input type="number" name="cvv" id="cvv" required>
         </div>
 	<br>
 	<div class="horizontal-fields">
 	<label>Expiration Date (mm/yy)</label>
     	<input type="text" name="expDate" id="expDate" required>
+	<label>CVV</label>
+        <input type="number" name="cvv" id="cvv" required>
 	</div>
 	<br>
 	<div class="horizontal-fields">
