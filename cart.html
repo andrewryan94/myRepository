@@ -25,7 +25,7 @@
 	<h1 style="color:black">Shopping Cart</h1>
 	<div class="cart-container">
  	<div class="cart-header">
-      	<button id="clear-cart">Clear Cart</button>
+      		<button id="clear-cart">Clear Cart</button>
 	</div>
 	</div>
 <!-- Individual cart items -->
@@ -35,10 +35,14 @@
 		<h3>Bananas</h3>
 		<p class="cart-item-price">$1.00</p>
 	</div>
+	<div class="cart-item">
+        <img src="images/Bananas.jpeg" alt="Bananas">
+        <div class="cart-item-info">
+		<h3>Bananas</h3>
+		<p class="cart-item-price">$1.00</p>
+	</div>
 	<div class="cart-item-quantity">
-		<button class="decrement">-</button>
 		<input type="number" value="0" min="0" max="9999" class="quantity">
-		<button class="increment">+</button>
 	</div>
 	<p class="cart-item-subtotal">$0.00</p>
 	<button class="cart-item-remove">X</button>
@@ -51,9 +55,7 @@
 		<p class="cart-item-price">$7.00</p>
 	</div>
 	<div class="cart-item-quantity">
-		<button class="decrement">-</button>
 		<input type="number" value="0" min="0" max="9999" class="quantity">
-		<button class="increment">+</button>
 	</div>
 	<p class="cart-item-subtotal">$0.00</p>
 	<button class="cart-item-remove">X</button>
@@ -66,9 +68,7 @@
 		<p class="cart-item-price">$7.00</p>
 	</div>
 	<div class="cart-item-quantity">
-		<button class="decrement">-</button>
 		<input type="number" value="0" min="0" max="9999" class="quantity">
-		<button class="increment">+</button>
 	</div>
 	<p class="cart-item-subtotal">$0.00</p>
 	<button class="cart-item-remove">X</button>
@@ -81,9 +81,7 @@
 		<p class="cart-item-price">$3.00</p>
 	</div>
 	<div class="cart-item-quantity">
-		<button class="decrement">-</button>
 		<input type="number" value="0" min="0" max="9999" class="quantity">
-		<button class="increment">+</button>
 	</div>
 	<p class="cart-item-subtotal">$0.00</p>
 	<button class="cart-item-remove">X</button>
@@ -96,9 +94,7 @@
 		<p class="cart-item-price">$5.00</p>
 	</div>
 	<div class="cart-item-quantity">
-		<button class="decrement">-</button>
 		<input type="number" value="0" min="0" max="9999" class="quantity">
-		<button class="increment">+</button>
 	</div>
 	<p class="cart-item-subtotal">$0.00</p>
 	<button class="cart-item-remove">X</button>
@@ -111,9 +107,7 @@
 		<p class="cart-item-price">$2.00</p>
 	</div>
 	<div class="cart-item-quantity">
-		<button class="decrement">-</button>
 		<input type="number" value="0" min="0" max="9999" class="quantity">
-		<button class="increment">+</button>
 	</div>
 	<p class="cart-item-subtotal">$0.00</p>
 	<button class="cart-item-remove">X</button>
@@ -126,9 +120,7 @@
 		<p class="cart-item-price">$5.00</p>
 	</div>
 	<div class="cart-item-quantity">
-		<button class="decrement">-</button>
 		<input type="number" value="0" min="0" max="9999" class="quantity">
-		<button class="increment">+</button>
 	</div>
 	<p class="cart-item-subtotal">$0.00</p>
 	<button class="cart-item-remove">X</button>
@@ -141,9 +133,7 @@
 		<p class="cart-item-price">$7.00</p>
 	</div>
 	<div class="cart-item-quantity">
-		<button class="decrement">-</button>
 		<input type="number" value="0" min="0" max="9999" class="quantity">
-		<button class="increment">+</button>
 	</div>
 	<p class="cart-item-subtotal">$0.00</p>
 	<button class="cart-item-remove">X</button>
@@ -156,9 +146,7 @@
 		<p class="cart-item-price">$5.00</p>
 	</div>
 	<div class="cart-item-quantity">
-		<button class="decrement">-</button>
 		<input type="number" value="0" min="0" max="9999" class="quantity">
-		<button class="increment">+</button>
 	</div>
 	<p class="cart-item-subtotal">$0.00</p>
 	<button class="cart-item-remove">X</button>
@@ -169,34 +157,35 @@
 	<h4 id="total-price">Total: $0.00</h4>
 	</div>
 <!-- Checkout button -->
-     <input type="button" class="button" onclick="window.location.href='https://andrewryan94.github.io/myRepository/payment.html';" value="Check Out">
+     <input type="button" class="button" onclick="window.location.href='https://andrewryan94.github.io/myRepository/payment.html';" 
+	     value="Check Out">
 
 </main>
 	<footer>
 	<p><a href="index.html">Home Page</a>&nbsp; | &nbsp;<a href="aboutus.html">About Us</a>&nbsp;| &nbsp;<a href="products.html">Products</a>&nbsp; | &nbsp;<a href="cart.html">Cart</a>&nbsp; | &nbsp;<a href="contactus.html">Contact Us</a></p>
 	</footer>
 <script>
-	window.onload = function () {
-    let cartItems = document.querySelectorAll(".cart-item");
-    let clearCartButton = document.getElementById("clear-cart");
-    let totalPriceElement = document.getElementById("total-price");
+window.onload = function () {
+	let cartItems = document.querySelectorAll(".cart-item");
+	let clearCartButton = document.getElementById("clear-cart");
+	let totalPriceElement = document.getElementById("total-price");
+		
+	function calculateCartItemSubtotal(cartItem) {
+		let priceElement = cartItem.querySelector(".cart-item-price");
+		let quantityElement = cartItem.querySelector(".quantity");
+		let subtotalElement = cartItem.querySelector(".cart-item-subtotal");
 
-    function calculateCartItemSubtotal(cartItem) {
-        let priceElement = cartItem.querySelector(".cart-item-price");
-        let quantityElement = cartItem.querySelector(".quantity");
-        let subtotalElement = cartItem.querySelector(".cart-item-subtotal");
+		let price = parseFloat(priceElement.innerText.replace("$", ""));
+		let quantity = parseInt(quantityElement.value);
+		let subtotal = price * quantity;
 
-        let price = parseFloat(priceElement.innerText);
-        let quantity = parseInt(quantityElement.value);
-        let subtotal = price * quantity;
+		subtotalElement.innerText = "$" + subtotal.toFixed(2);
 
-        subtotalElement.innerText = "$" + subtotal.toFixed(2);
-
-        return subtotal;
-    }
-
-    function calculateTotalPrice() {
-        let totalPrice = 0;
+	return subtotal;
+	}
+		
+	function calculateTotalPrice() {
+		let totalPrice = 0;
 
         for (let cartItem of cartItems) {
             let subtotalElement = cartItem.querySelector(".cart-item-subtotal");
@@ -206,51 +195,52 @@
 
         totalPriceElement.innerText = "$" + totalPrice.toFixed(2);
     }
-
+		
+	
     for (let cartItem of cartItems) {
-        let incrementButton = cartItem.querySelector(".increment");
-        let decrementButton = cartItem.querySelector(".decrement");
-        let removeButton = cartItem.querySelector(".cart-item-remove");
-        let quantityInput = cartItem.querySelector(".quantity");
-
-        incrementButton.addEventListener("click", function () {
-            let quantity = parseInt(quantityInput.value);
-            quantity++;
-            quantityInput.value = quantity;
-            let parent = this.parentElement.parentElement; // Go up to the cart item
-            let subtotal = calculateCartItemSubtotal(parent);
-            calculateTotalPrice();
-        });
-
-        decrementButton.addEventListener("click", function () {
-            let quantity = parseInt(quantityInput.value);
-            if (quantity > 1) {
-                quantity--;
-                quantityInput.value = quantity;
-                let parent = this.parentElement.parentElement; // Go up to the cart item
-                let subtotal = calculateCartItemSubtotal(parent);
-                calculateTotalPrice();
-            }
-        });
-
-        quantityInput.addEventListener("change", function () {
-            let parent = this.parentElement.parentElement; // Go up to the cart item
-            let subtotal = calculateCartItemSubtotal(parent);
-            calculateTotalPrice();
-        });
-
-        removeButton.addEventListener("click", function () {
-            cartItem.remove();
-            calculateTotalPrice();
-        });
-    }
-
-    clearCartButton.addEventListener("click", function () {
-        for (let cartItem of cartItems) {
-            cartItem.remove();
-            calculateTotalPrice();
-        }
-    });
+	let incrementButton = cartItem.querySelector(".increment");
+	let decrementButton = cartItem.querySelector(".decrement");
+	let removeButton = cartItem.querySelector(".cart-item-remove");
+	let quantityInput = cartItem.querySelector(".quantity");
+		
+	incrementButton.addEventListener("click", function () {
+		let quantity = parseInt(quantityInput.value);
+		quantity++;
+		quantityInput.value = quantity;
+		let parent = this.parentElement.parentElement;
+		let subtotal = calculateCartItemSubtotal(parent);
+		calculateTotalPrice();
+	});
+		
+	decrementButton.addEventListener("click", function () {
+		let quantity = parseInt(quantityInput.value);
+		if (quantity > 0) {
+		quantity--;
+		quantityInput.value = quantity;
+		let parent = this.parentElement.parentElement;
+		let subtotal = calculateCartItemSubtotal(parent);
+		calculateTotalPrice();
+	}
+});
+		
+	removeButton.addEventListener("click", function () {
+		cartItem.remove();
+		calculateTotalPrice();
+	});
+		
+	quantityInput.addEventListener("change", function () {
+		let parent = this.parentElement.parentElement;
+		let subtotal = calculateCartItemSubtotal(parent);
+		calculateTotalPrice();
+	});
+}
+	
+clearCartButton.addEventListener("click", function () {
+	for (let cartItem of cartItems) {
+		cartItem.remove();
+	}
+		calculateTotalPrice();
+	});
 };
 </script>
 </body>
