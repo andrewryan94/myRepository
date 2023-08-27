@@ -173,44 +173,53 @@
 	</footer>
 	
 <script>
-	window.onload = function () {
-   / / Define a function to clear the cart
+	
+// Calculate and update the subtotal and total prices
+function updateTotal() {
+	const items = document.querySelectorAll('.cart-item');
+
+	let totalPrice = 0;
+	items.forEach(item => {
+		const priceElement = item.querySelector('.cart-item-price');
+		const quantityElement = item.querySelector('.quantity');
+		const subtotalElement = item.querySelector('.cart-item-subtotal');
+
+		const price = parseFloat(priceElement.textContent.replace('$', ''));
+		const quantity = parseInt(quantityElement.value);
+		const subtotal = price * quantity;
+
+		subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+		totalPrice += subtotal;
+	});
+
+	document.getElementById('total-price').textContent = `Total: $${totalPrice.toFixed(2)}`;
+}
+
+// Clear the cart
 function clearCart() {
-  // Loop through each cart item and reset its quantity and subtotal
-  cartItems.forEach((item) => {
-    item.querySelector(".quantity").value = 0;
-    item.querySelector(".cart-item-subtotal").textContent = "$0.00";
-  });
-  // Update the total price to zero
-  totalPrice.textContent = "Total: $0.00";
+	const quantityInputs = document.querySelectorAll('.quantity');
+	quantityInputs.forEach(input => (input.value = 0));
+	updateTotal();
 }
 
-// Define a function to remove a cart item
-function removeCartItem(event) {
-  // Get the target element of the event
-  const target = event.target;
-  // Check if the target element is a remove button
-  if (target.classList.contains("cart-item-remove")) {
-    // Get the parent element of the target element, which is the cart item
-    const cartItem = target.parentElement;
-    // Remove the cart item from the document
-    cartItem.remove();
-    // Update the total price of the cart
-    updateTotalPrice();
-  }
+// Handle checkout
+function checkout() {
+	// Add your checkout logic here, e.g., redirect to a payment page
+	window.location.href = 'https://andrewryan94.github.io/myRepository/payment.html';
 }
 
-// Add an event listener to the clear cart button to call the clearCart function when clicked
-clearCartBtn.addEventListener("click", clearCart);
+// Attach event listeners
+document.addEventListener('DOMContentLoaded', () => {
+	const quantityInputs = document.querySelectorAll('.quantity');
+	const clearCartButton = document.getElementById('clear-cart');
 
-// Add an event listener to each cart item to call the updateTotalPrice function when its quantity changes
-cartItems.forEach((item) => {
-  item.querySelector(".quantity").addEventListener("change", updateTotalPrice);
+	quantityInputs.forEach(input => {
+		input.addEventListener('input', updateTotal);
+	});
+
+	clearCartButton.addEventListener('click', clearCart);
 });
-
-// Add an event listener to the document to call the removeCartItem function when a remove button is clicked
-document.addEventListener("click", removeCartItem);
-	}
+	
 </script>
 </body>
 </html>
