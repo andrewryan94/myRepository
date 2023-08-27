@@ -174,89 +174,42 @@
 	
 <script>
 	window.onload = function () {
-    let cartItems = document.querySelectorAll(".cart-item");
-    let clearCartButton = document.getElementById(".clear-cart");
-    let totalPriceElement = document.getElementById(".total-price");
- 
-    function calculateCartItemSubtotal(cartItem) {
-        let priceElement = cartItem.querySelector(".cart-item-price");
-        let quantityElement = cartItem.querySelector(".quantity");
-        let subtotalElement = cartItem.querySelector(".cart-item-subtotal");
+   / / Define a function to clear the cart
+function clearCart() {
+  // Loop through each cart item and reset its quantity and subtotal
+  cartItems.forEach((item) => {
+    item.querySelector(".quantity").value = 0;
+    item.querySelector(".cart-item-subtotal").textContent = "$0.00";
+  });
+  // Update the total price to zero
+  totalPrice.textContent = "Total: $0.00";
+}
 
-        let price = parseFloat(priceElement.innerText);
-        let quantity = parseInt(quantityElement.value);
-        let subtotal = price * quantity;
+// Define a function to remove a cart item
+function removeCartItem(event) {
+  // Get the target element of the event
+  const target = event.target;
+  // Check if the target element is a remove button
+  if (target.classList.contains("cart-item-remove")) {
+    // Get the parent element of the target element, which is the cart item
+    const cartItem = target.parentElement;
+    // Remove the cart item from the document
+    cartItem.remove();
+    // Update the total price of the cart
+    updateTotalPrice();
+  }
+}
 
-        subtotalElement.innerText = "$" + subtotal.toFixed(2);
+// Add an event listener to the clear cart button to call the clearCart function when clicked
+clearCartBtn.addEventListener("click", clearCart);
 
-        return subtotal;
-    }
+// Add an event listener to each cart item to call the updateTotalPrice function when its quantity changes
+cartItems.forEach((item) => {
+  item.querySelector(".quantity").addEventListener("change", updateTotalPrice);
+});
 
-    function calculateTotalPrice() {
-        let totalPrice = 0;
-
-        for (let cartItem of cartItems) {
-            let subtotalElement = cartItem.querySelector(".cart-item-subtotal");
-            let subtotal = parseFloat(subtotalElement.innerText.replace("$", ""));
-            totalPrice += subtotal;
-        }
-
-        totalPriceElement.innerText = "$" + totalPrice.toFixed(2);
-    }
-
-    for (let cartItem of cartItems) {
-     //   let incrementButton = cartItem.querySelector(".increment");
-     //   let decrementButton = cartItem.querySelector(".decrement");
-     //   let removeButton = cartItem.querySelector(".cart-item-remove");
-	var button = document.querySelector(".cart-item-remove");
-	// Add a click event listener to the button
-    	button.addEventListner("click", function() {
-	//Remove the parent element of the button, which is the cart item
-	this.parentNode.remove();
-		
-		
-        let quantityInput = cartItem.querySelector(".quantity");
-
-        incrementButton.addEventListener("click", function () {
-            let quantity = parseInt(quantityInput.value);
-            quantity++;
-            quantityInput.value = quantity;
-            let parent = this.parentElement.parentElement; // Go up to the cart item
-            let subtotal = calculateCartItemSubtotal(parent);
-            calculateTotalPrice();
-        });
-
-        decrementButton.addEventListener("click", function () {
-            let quantity = parseInt(quantityInput.value);
-            if (quantity > 1) {
-                quantity--;
-                quantityInput.value = quantity;
-                let parent = this.parentElement.parentElement; // Go up to the cart item
-                let subtotal = calculateCartItemSubtotal(parent);
-                calculateTotalPrice();
-            }
-        });
-
-        quantityInput.addEventListener("change", function () {
-            let parent = this.parentElement.parentElement; // Go up to the cart item
-            let subtotal = calculateCartItemSubtotal(parent);
-            calculateTotalPrice();
-        });
-	
-        // removeButton.addEventListener("click", function () {
-        //    cartItem.remove();
-
-	calculateTotalPrice();
-        });
-    }
-
-    clearCartButton.addEventListener("click", function () {
-        for (let cartItem of cartItems) {
-            cartItem.remove();
-            calculateTotalPrice();
-        }
-    });
-};
+// Add an event listener to the document to call the removeCartItem function when a remove button is clicked
+document.addEventListener("click", removeCartItem);
 </script>
 </body>
 </html>
