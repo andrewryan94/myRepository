@@ -62,7 +62,7 @@ table tr th, table tr td {border: 1px solid #2a332a; padding: 50px; }
 
 .cart-item-price {font-weight: bold;}
 
-.cart-item-quantity {display: flex; align-items: center;}
+.cart-item-quantity {display: flex; align-items: right;}
 
 .cart-item-quantity button {width: 30px; height: 30px; background-color: lightgray; border: none; font-weight: bold; cursor: pointer;}
 
