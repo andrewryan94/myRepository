@@ -21,6 +21,23 @@
 		
 	</style>
 
+	<script>
+		function addToCart(name, price) {
+			const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+				
+			const existingItem = cartData.find(item => item.name === name);
+			if (existingItem) {
+				existingItem.quantity++;
+			} else {
+				cartData.push({ name, price, quantity: 1 });
+			}
+				
+			localStorage.setItem('cart', JSON.stringify(cartData));
+			alert('${name} added to cart!');
+		}
+			
+	</script>
+
 	</head>
 <body id="container">
 	<header>
