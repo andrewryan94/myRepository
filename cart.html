@@ -177,7 +177,7 @@
     let cartItems = document.querySelectorAll(".cart-item");
     let clearCartButton = document.getElementById(".clear-cart");
     let totalPriceElement = document.getElementById(".total-price");
-
+ 
     function calculateCartItemSubtotal(cartItem) {
         let priceElement = cartItem.querySelector(".cart-item-price");
         let quantityElement = cartItem.querySelector(".quantity");
@@ -205,8 +205,8 @@
     }
 
     for (let cartItem of cartItems) {
-        let incrementButton = cartItem.querySelector(".increment");
-        let decrementButton = cartItem.querySelector(".decrement");
+     //   let incrementButton = cartItem.querySelector(".increment");
+     //   let decrementButton = cartItem.querySelector(".decrement");
         let removeButton = cartItem.querySelector(".cart-item-remove");
         let quantityInput = cartItem.querySelector(".quantity");
 
