@@ -209,7 +209,11 @@
      //   let decrementButton = cartItem.querySelector(".decrement");
      //   let removeButton = cartItem.querySelector(".cart-item-remove");
 	var button = document.querySelector(".cart-item-remove");
-
+	// Add a click event listener to the button
+    	button.addEventListner("click", function() {
+	//Remove the parent element of the button, which is the cart item
+	this.parentNode.remove();
+		
 		
         let quantityInput = cartItem.querySelector(".quantity");
 
@@ -238,11 +242,7 @@
             let subtotal = calculateCartItemSubtotal(parent);
             calculateTotalPrice();
         });
-	// Add a click event listener to the button
-    	button.addEventListner("click", function() {
-	//Remove the parent element of the button, which is the cart item
-	this.parentNode.remove();
-		
+	
         // removeButton.addEventListener("click", function () {
         //    cartItem.remove();
 
