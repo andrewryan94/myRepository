@@ -68,7 +68,7 @@ table tr th, table tr td {border: 1px solid #2a332a; padding: 50px; }
 
 .cart-item-quantity input {width: 50px; height: 30px;} 
 
-.cart-item-remove {width: 30px; height: 30px; background-color: transparent; color: red; border: none; font-weight: bold; cursor: pointer; margin-top: auto;}
+.cart-item-remove {width: 30px; height: 30px; background-color: red; color: white; border: none; font-weight: bold; cursor: pointer; margin-top: auto;}
 
 .cart-footer {display: flex; justify-content: flex-end; align-items: center; padding-right: 10%; padding-bottom: 10%; width: 80%; margin: auto;}
 
