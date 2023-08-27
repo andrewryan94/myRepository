@@ -32,7 +32,8 @@
 		<style>
 		
 		h2 {
-		text-align: left;
+		text-align: center;
+		font-family: "Times New Roman", Times, serif;
 		}
 		form {
 		width:90%;
@@ -70,6 +71,16 @@
            	 width: auto; 
             	margin-right: 10px; 
         	}
+		.form-box {
+           	background-color: #fff; /* Background color of the boxes */
+            	border: 2px solid #4b5c4b; /* Border style */
+            	border-radius: 15px; /* Rounded corners */
+            	padding: 20px; /* Padding inside the boxes */
+            	margin: 20px auto; /* Center the boxes horizontally */
+            	width: 90%; /* Set the width of the boxes */
+           	max-width: 800px; /* Set a maximum width for larger screens */
+        	}
+
     		#cvv, #expDate, #billingZip, #shippingZip {
        		width: 100px; 
    		}
@@ -103,6 +114,7 @@
 	<main>
 
 	<br>
+	<div class="form-box">
 	<form action="#" method="post" autocomplete="on">
 	<h2>Billing Information</h2>
 	<div class="horizontal-fields">
@@ -218,7 +230,11 @@
 	}
 	}
 	</script>
+	</form>
+	</div>
 
+	<div class="form-box">
+	<form action="#" method="post" autocomplete="on">
 	<h2>Shipping Information</h2>
 	<input type="checkbox" id="sameAsBilling" onchange="copyBillingToShipping()">
 	<label for="sameAsBilling">Same as Billing</label>
@@ -298,7 +314,7 @@
 	</select>
 	<br>
 	<Label>ZIP Code</Label>
-	<input type="text" pattern="[0-9]{5}" name="shippingZip" id="shippingZip" />
+	<input type="text" pattern="[0-9]{5}" name="shippingZip" id="shippingZip" >
 	</div>
 	<br>
 
@@ -312,6 +328,7 @@
 	<br>
 	
 	</form>
+	</div>
 
 	</main>
 
