@@ -202,9 +202,15 @@ function clearCart() {
 	updateTotal();
 }
 
+// Remove an item from the cart
+function removeItem(item) {
+	item.remove();
+	updateTotal();
+}
+
 // Handle checkout
 function checkout() {
-	// Add your checkout logic here, e.g., redirect to a payment page
+	// Redirect to a payment page
 	window.location.href = 'https://andrewryan94.github.io/myRepository/payment.html';
 }
 
@@ -218,6 +224,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	clearCartButton.addEventListener('click', clearCart);
+});
+
+// Attach event listeners to remove buttons
+document.addEventListener('DOMContentLoaded', () => {
+	const removeButtons = document.querySelectorAll('.cart-item-remove');
+	removeButtons.forEach(button => {
+		button.addEventListener('click', event => {
+			const cartItem = event.target.closest('.cart-item');
+			removeItem(cartItem);
+		});
+	});
 });
 	
 </script>
