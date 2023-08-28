@@ -231,8 +231,34 @@ function checkout() {
 // Redirect to payment page
 	window.location.href = 'https://andrewryan94.github.io/myRepository/payment.html';
 }
+// Event listeners
+	document.addEventListener('DOMContentLoaded', () => {
+			const paymentItemsDiv = document.getElementById('payment-items');
+			const cartData = JSON.parse(localStorage.getItem('cartData'));
 
-// Attach event listeners
+			if (cartData && cartData.length > 0) {
+				let totalPaymentAmount = 0;
+				cartData.forEach(item => {
+					const itemTotal = item.price * item.quantity;
+					totalPaymentAmount += itemTotal;
+					paymentItemsDiv.innerHTML += `
+						<div>
+							<p>${item.name} - Quantity: ${item.quantity} - Subtotal: $${itemTotal.toFixed(2)}</p>
+						</div>
+					`;
+				});
+
+				paymentItemsDiv.innerHTML += `
+					<p>Total Payment Amount: $${totalPaymentAmount.toFixed(2)}</p>
+				`;
+			} else {
+				paymentItemsDiv.innerHTML = '<p>No items in the cart.</p>';
+			}
+
+			// Clear cart data after displaying it on the payment page
+			localStorage.removeItem('cartData');
+		});
+
 document.addEventListener('DOMContentLoaded', () => {
 	const quantityInputs = document.querySelectorAll('.quantity');
 	const clearCartButton = document.getElementById('clear-cart');
