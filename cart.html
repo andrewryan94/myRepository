@@ -64,12 +64,17 @@
             document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
         }
 
-        // Clear the cart
-        function clearCart() {
-            const quantityInputs = document.querySelectorAll('.quantity');
-            quantityInputs.forEach(input => (input.value = 0));
-            updateTotal();
-        }
+   	function clearCart() {
+    	// Clear the cart items from local storage
+    	localStorage.removeItem('cart');
+
+    	// Clear the cart display on the page
+    	const cartContainer = document.querySelector('.cart-container');
+    	cartContainer.innerHTML = ''; // Remove all cart items from the page
+
+    	// Update the total price (set it to $0.00)
+    	document.getElementById('total-price').textContent = '$0.00';
+	}
 
         // Handle checkout
         function checkout() {
@@ -77,11 +82,15 @@
             window.location.href = 'https://andrewryan94.github.io/myRepository/payment.html';
         }
 
-        // Remove an item from the cart
-        function removeItem(item) {
-            item.remove();
-            updateTotal();
-        }
+	// Remove an item from the cart
+	function removeItem(item) {
+  	const itemName = item.querySelector('h3').textContent;
+    	item.remove();
+	const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+   	const updatedCartData = cartData.filter(cartItem => cartItem.name !== itemName);
+    	localStorage.setItem('cart', JSON.stringify(updatedCartData));
+        updateTotal();
+	}
 
         // Event listeners
         document.addEventListener('DOMContentLoaded', () => {
