@@ -208,8 +208,27 @@ function removeItem(item) {
 }
 
 // Handle checkout
+
+// Save cart data to localStorage
+function saveCartToStorage(cartData) {
+	localStorage.setItem('cartData', JSON.stringify(cartData));
+}
+	
 function checkout() {
-	// Redirect to a payment page
+	// Save cart data to localStorage
+	const items = document.querySelectorAll('.cart-item');
+	const cartData = [];
+	items.forEach(item => {
+		const quantityElement = item.querySelector('.quantity');
+		const quantity = parseInt(quantityElement.value);
+		if (quantity > 0) {
+			const itemName = item.querySelector('h3').textContent;
+			const itemPrice = parseFloat(item.querySelector('.cart-item-price').textContent.replace('$', ''));
+			cartData.push({ name: itemName, price: itemPrice, quantity });
+		}
+	});
+	saveCartToStorage(cartData);
+// Redirect to payment page
 	window.location.href = 'https://andrewryan94.github.io/myRepository/payment.html';
 }
 
