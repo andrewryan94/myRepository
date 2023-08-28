@@ -2,235 +2,127 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8"> <title>EZ Shop - Cart</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-
+    <meta charset="utf-8">
+    <title>EZ Shop - Cart</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body id="container">
-<header>
-	<img src="images/logo.png" alt="EZ Shop logo" 	width="150" height="150">
-<h1>Cart</h1>
-</header>
-<nav>
-	<ul>
-	<li><a href="index.html">Home Page</a></li>
-	<li><a href="aboutus.html">About Us</a></li>
-	<li><a href="products.html">Products</a></li>
-	<li><a href="cart.html">Cart</a></li>
-	<li><a href="contactus.html">Contact Us</a></li>
-	</ul>
-</nav>
-<main>
-	<h1 style="color: black">Shopping Cart</h1>
-	<div class="cart-container">
-		<div class="cart-header">
-			<button id="clear-cart">Clear Cart</button>
-		</div>
-	</div>
-	
-<!-- Individual cart items -->
-	<div class="cart-item">
-        <img src="images/Bananas.jpeg" alt="Bananas">
-        <div class="cart-item-info">
-		<h3>Bananas
-		<p class="cart-item-price">$1.00 each</p></h3>
-	</div>
-	<div class="cart-item-quantity">
-	<input type="number" value="0" min="0" max="9999" class="quantity">
-	</div>
-	<p class="cart-item-subtotal">$0.00</p>
-	<button class="cart-item-remove">X</button>
-</div>
-	
-	
-<!-- Individual cart items -->
-	<div class="cart-item">
-        <img src="images/Blueberries.jpeg" alt="Blueberries">
-		<div class="cart-item-info">
-		<h3>Blueberries
-		<p class="cart-item-price">$7.00 per container</p></h3>
-	</div>
-	<div class="cart-item-quantity">
-		<input type="number" value="0" min="0" max="9999" class="quantity">
-	</div>
-	<p class="cart-item-subtotal">$0.00</p>
-	<button class="cart-item-remove">X</button>
-</div>
-	
-<!-- Individual cart items -->
-	<div class="cart-item">
-        <img src="images/Cotton_Candy_Grapes.jpeg" alt="Cotton Candy Grapes">
-        <div class="cart-item-info">
-		<h3>Cotton Candy Grapes
-		<p class="cart-item-price">$7.00 per container</p></h3>
-	</div>
-	<div class="cart-item-quantity">
-		<input type="number" value="0" min="0" max="9999" class="quantity">
-	</div>
-	<p class="cart-item-subtotal">$0.00</p>
-	<button class="cart-item-remove">X</button>
-</div>
-	
-<!-- Individual cart items -->
-	<div class="cart-item">
-        <img src="images/Guava.jpeg" alt="Guava">
-		<div class="cart-item-info">
-		<h3>Guava
-		<p class="cart-item-price">$3.00 each</p></h3>
-	</div>
-	<div class="cart-item-quantity">
-		<input type="number" value="0" min="0" max="9999" class="quantity">
-	</div>
-	<p class="cart-item-subtotal">$0.00</p>
-	<button class="cart-item-remove">X</button>
-</div>
-	
-<!-- Individual cart items -->
-	<div class="cart-item">
-        <img src="images/Lychee.jpeg" alt="Lychee">
-        <div class="cart-item-info">
-		<h3>Lychee
-		<p class="cart-item-price">$5.00 per container</p></h3>
-	</div>
-	<div class="cart-item-quantity">
-		<input type="number" value="0" min="0" max="9999" class="quantity">
-	</div>
-	<p class="cart-item-subtotal">$0.00</p>
-	<button class="cart-item-remove">X</button>
-</div>
-	
-<!-- Individual cart items -->
-	<div class="cart-item">
-        <img src="images/Mango.jpeg" alt="Mango">
-        <div class="cart-item-info">
-		<h3>Mango
-		<p class="cart-item-price">$2.00 each</p></h3>
-	</div>
-	<div class="cart-item-quantity">
-		<input type="number" value="0" min="0" max="9999" class="quantity">
-	</div>
-	<p class="cart-item-subtotal">$0.00</p>
-	<button class="cart-item-remove">X</button>
-</div>
-	
-<!-- Individual cart items -->
-	<div class="cart-item">
-        <img src="images/Pink_Pineapples.jpeg" alt="Pink Pineapples">
-        <div class="cart-item-info">
-		<h3>Pink Pineapples
-		<p class="cart-item-price">$5.00 each</p></h3>
-	</div>
-	<div class="cart-item-quantity">
-		<input type="number" value="0" min="0" max="9999" class="quantity">
-	</div>
-	<p class="cart-item-subtotal">$0.00</p>
-	<button class="cart-item-remove">X</button>
-</div>
-	
-<!-- Individual cart items -->
-	<div class="cart-item">
-        <img src="images/Strawberries.jpeg" alt="Strawberries">
-        <div class="cart-item-info">
-		<h3>Strawberries
-		<p class="cart-item-price">$7.00 per container</p></h3>
-	</div>
-	<div class="cart-item-quantity">
-		<input type="number" value="0" min="0" max="9999" class="quantity">
-	</div>
-	<p class="cart-item-subtotal">$0.00</p>
-	<button class="cart-item-remove">X</button>
-</div>
-	
-<!-- Individual cart items -->
-	<div class="cart-item">
-        <img src="images/Yellow_Dragon_Fruit.jpeg" alt="Yellow Dragon Fruit">
-        <div class="cart-item-info">
-		<h3>Yellow DragonFruit
-		<p class="cart-item-price">$5.00 each</p></h3>
-	</div>
-	<div class="cart-item-quantity">
-		<input type="number" value="0" min="0" max="9999" class="quantity">
-	</div>
-	<p class="cart-item-subtotal">$0.00</p>
-	<button class="cart-item-remove">X</button>
-</div>
-	
-	<div class="cart-footer">
-	<h4 style="color: black; font-size: 20px;">Total Price:</h4>
-	<h4 id="total-price">$0.00</h4>
-	</div>
-	
-<!-- Checkout button -->
-     <input type="button" class="button" onclick="window.location.href='https://andrewryan94.github.io/myRepository/payment.html';" value="Check Out">
-	 
-	 
-</main>
+    <header>
+        <img src="images/logo.png" alt="EZ Shop logo" width="150" height="150">
+        <h1>Cart</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1 style="color: black">Shopping Cart</h1>
+        <div class="cart-container">
+            <div class="cart-header">
+                <button id="clear-cart">Clear Cart</button>
+            </div>
+        </div>
+        <!-- Cart items will be dynamically added here -->
+        <div class="cart-footer">
+            <h4 style="color: black; font-size: 20px;">Total Price:</h4>
+            <h4 id="total-price">$0.00</h4>
+        </div>
+        <!-- Checkout button -->
+        <input type="button" class="button" onclick="checkout();" value="Check Out">
+    </main>
 
-	<footer>
-	<p><a href="index.html">Home Page</a>&nbsp; | &nbsp;<a href="aboutus.html">About Us</a>&nbsp;| &nbsp;<a href="products.html">Products</a>&nbsp; | &nbsp;<a href="cart.html">Cart</a>&nbsp; | &nbsp;<a href="contactus.html">Contact Us</a></p>
-	</footer>
-	
-<script>
-	
-// Calculate and update the subtotal and total prices
-function updateTotal() {
-	const items = document.querySelectorAll('.cart-item');
-	let totalPrice = 0;
-	items.forEach(item => {
-		const priceElement = item.querySelector('.cart-item-price');
-		const quantityElement = item.querySelector('.quantity');
-		const subtotalElement = item.querySelector('.cart-item-subtotal');
+    <footer>
+        <p><a href="index.html">Home Page</a>&nbsp; | &nbsp;<a href="aboutus.html">About Us</a>&nbsp;| &nbsp;<a
+                href="products.html">Products</a>&nbsp; | &nbsp;<a href="cart.html">Cart</a>&nbsp; | &nbsp;<a
+                href="contactus.html">Contact Us</a></p>
+    </footer>
 
-		const price = parseFloat(priceElement.textContent.replace('$', ''));
-		const quantity = parseInt(quantityElement.value);
-		const subtotal = price * quantity;
+    <script>
+        // Calculate and update the subtotal and total prices
+        function updateTotal() {
+            const items = document.querySelectorAll('.cart-item');
+            let totalPrice = 0;
+            items.forEach(item => {
+                const priceElement = item.querySelector('.cart-item-price');
+                const quantityElement = item.querySelector('.quantity');
+                const subtotalElement = item.querySelector('.cart-item-subtotal');
 
-		subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-		totalPrice += subtotal;
-	});
+                const price = parseFloat(priceElement.textContent.replace('$', ''));
+                const quantity = parseInt(quantityElement.value);
+                const subtotal = price * quantity;
 
-	document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
-}
+                subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+                totalPrice += subtotal;
+            });
 
-// Clear the cart
-function clearCart() {
-	const quantityInputs = document.querySelectorAll('.quantity');
-	quantityInputs.forEach(input => (input.value = 0));
-	updateTotal();
-}
+            document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
+        }
 
-// Handle checkout
-function checkout() {
-	// Add checkout logic to redirect to a payment page
-	window.location.href = 'https://andrewryan94.github.io/myRepository/payment.html';
-}	
-// Remove an item from the cart
-function removeItem(item) {
-	item.remove();
-	updateTotal();
-}
+        // Clear the cart
+        function clearCart() {
+            const quantityInputs = document.querySelectorAll('.quantity');
+            quantityInputs.forEach(input => (input.value = 0));
+            updateTotal();
+        }
 
+        // Handle checkout
+        function checkout() {
+            // Add checkout logic to redirect to a payment page
+            window.location.href = 'https://andrewryan94.github.io/myRepository/payment.html';
+        }
 
-// Event listeners
-	
-document.addEventListener('DOMContentLoaded', () => {
-	const quantityInputs = document.querySelectorAll('.quantity');
-	const clearCartButton = document.getElementById('clear-cart');
-	const removeButtons = document.querySelectorAll('.cart-item-remove');
-	
-	quantityInputs.forEach(input => {
-		input.addEventListener('input', updateTotal);
-	});
+        // Remove an item from the cart
+        function removeItem(item) {
+            item.remove();
+            updateTotal();
+        }
 
-	clearCartButton.addEventListener('click', clearCart);
-	removeButtons.forEach(button => {
-				button.addEventListener('click', event => {
-					const cartItem = event.target.closest('.cart-item');
-					removeItem(cartItem);
-				});
-			});
-		});
-</script>
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            const clearCartButton = document.getElementById('clear-cart');
+            const cartContainer = document.querySelector('.cart-container');
+
+            clearCartButton.addEventListener('click', clearCart);
+
+            // Fetch cart items from local storage and create cart elements
+            const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+            cartData.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+
+                cartItem.innerHTML = `
+                    <img src="images/${item.name}.jpeg" alt="${item.name}">
+                    <div class="cart-item-info">
+                        <h3>${item.name}</h3>
+                        <p class="cart-item-price">$${item.price}</p>
+                    </div>
+                    <div class="cart-item-quantity">
+                        <input type="number" value="${item.quantity}" min="0" max="9999" class="quantity">
+                    </div>
+                    <p class="cart-item-subtotal">$${(item.price * item.quantity).toFixed(2)}</p>
+                    <button class="cart-item-remove" onclick="removeItem(this.parentElement);">X</button>
+                `;
+
+                cartContainer.appendChild(cartItem);
+            });
+
+            // Add input event listeners for quantity inputs
+            const quantityInputs = document.querySelectorAll('.quantity');
+            quantityInputs.forEach(input => {
+                input.addEventListener('input', updateTotal);
+            });
+
+            // Initialize total price
+            updateTotal();
+        });
+    </script>
 </body>
+
 </html>
