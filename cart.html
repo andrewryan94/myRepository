@@ -176,7 +176,6 @@
 // Calculate and update the subtotal and total prices
 function updateTotal() {
 	const items = document.querySelectorAll('.cart-item');
-
 	let totalPrice = 0;
 	items.forEach(item => {
 		const priceElement = item.querySelector('.cart-item-price');
@@ -205,7 +204,7 @@ function clearCart() {
 function checkout() {
 	// Add checkout logic to redirect to a payment page
 	window.location.href = 'https://andrewryan94.github.io/myRepository/payment.html';
-	
+}	
 // Remove an item from the cart
 function removeItem(item) {
 	item.remove();
@@ -218,25 +217,20 @@ function removeItem(item) {
 document.addEventListener('DOMContentLoaded', () => {
 	const quantityInputs = document.querySelectorAll('.quantity');
 	const clearCartButton = document.getElementById('clear-cart');
-
+	const removeButtons = document.querySelectorAll('.cart-item-remove');
+	
 	quantityInputs.forEach(input => {
 		input.addEventListener('input', updateTotal);
 	});
 
 	clearCartButton.addEventListener('click', clearCart);
-});
-
-// Attach event listeners to remove buttons
-document.addEventListener('DOMContentLoaded', () => {
-	const removeButtons = document.querySelectorAll('.cart-item-remove');
 	removeButtons.forEach(button => {
-		button.addEventListener('click', event => {
-			const cartItem = event.target.closest('.cart-item');
-			removeItem(cartItem);
+				button.addEventListener('click', event => {
+					const cartItem = event.target.closest('.cart-item');
+					removeItem(cartItem);
+				});
+			});
 		});
-	});
-});
-	
 </script>
 </body>
 </html>
