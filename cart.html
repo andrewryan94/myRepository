@@ -207,34 +207,13 @@ function removeItem(item) {
 	updateTotal();
 }
 
-// Handle checkout
-
-// Save cart data to localStorage
-function saveCartToStorage(cartData) {
-	localStorage.setItem('cartData', JSON.stringify(cartData));
-}
-	
-function checkout() {
-	// Save cart data to localStorage
-	const items = document.querySelectorAll('.cart-item');
-	const cartData = [];
-	items.forEach(item => {
-		const quantityElement = item.querySelector('.quantity');
-		const quantity = parseInt(quantityElement.value);
-		if (quantity > 0) {
-			const itemName = item.querySelector('h3').textContent;
-			const itemPrice = parseFloat(item.querySelector('.cart-item-price').textContent.replace('$', ''));
-			cartData.push({ name: itemName, price: itemPrice, quantity });
-		}
-	});
-	saveCartToStorage(cartData);
 // Redirect to payment page
 	window.location.href = 'https://andrewryan94.github.io/myRepository/payment.html';
 }
 // Event listeners
 	document.addEventListener('DOMContentLoaded', () => {
 			const paymentItemsDiv = document.getElementById('payment-items');
-			const cartData = JSON.parse(localStorage.getItem('cartData'));
+			const cartData = JSON.parse(localStorage.getItem('cart'));
 
 			if (cartData && cartData.length > 0) {
 				let totalPaymentAmount = 0;
@@ -256,7 +235,7 @@ function checkout() {
 			}
 
 			// Clear cart data after displaying it on the payment page
-			localStorage.removeItem('cartData');
+			//localStorage.removeItem('cartData');
 		});
 
 document.addEventListener('DOMContentLoaded', () => {
