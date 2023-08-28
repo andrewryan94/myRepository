@@ -201,15 +201,18 @@ function clearCart() {
 	updateTotal();
 }
 
+// Handle checkout
+function checkout() {
+	// Add checkout logic to redirect to a payment page
+	window.location.href = 'https://andrewryan94.github.io/myRepository/payment.html';
+	
 // Remove an item from the cart
 function removeItem(item) {
 	item.remove();
 	updateTotal();
 }
 
-// Redirect to payment page
-	window.location.href = 'https://andrewryan94.github.io/myRepository/payment.html';
-}
+
 // Event listeners
 	
 document.addEventListener('DOMContentLoaded', () => {
