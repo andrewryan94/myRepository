@@ -9,7 +9,7 @@
         /* Additional CSS */
         .button-container {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
             margin-top: 10px;
         }
@@ -38,11 +38,9 @@
         <h1 style="color: black">Shopping Cart</h1>
         <div class="cart-container">
             <div class="cart-header">
-                <!-- Clear Cart button moved here -->
-                <button id="clear-cart">Clear Cart</button>
-                <!-- Checkout button moved here -->
                 <div class="button-container">
-                    <input type="button" class="button" onclick="checkout();" value="Check Out">
+			<button id="clear-cart">Clear Cart</button>
+			<input type="button" class="button" onclick="checkout();" value="Check Out">
                 </div>
             </div>
         </div>
