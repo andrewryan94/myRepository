@@ -9,8 +9,7 @@
         /* Additional CSS */
         .button-container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: flex-end;
             margin-top: 10px;
         }
 
@@ -36,14 +35,14 @@
     </nav>
     <main>
         <h1 style="color: black">Shopping Cart</h1>
-        <div class="cart-container">
-            <div class="cart-header">
-                <div class="button-container">
-			<button id="clear-cart">Clear Cart</button>
-			<input type="button" class="button" onclick="checkout();" value="Check Out">
-                </div>
-            </div>
-        </div>
+        <div class="buttons-container">
+	     <div class="button-container">
+		<button id="clear-cart">Clear Cart</button>
+	     </div>
+		<div class="button-container">
+		    <input type="button" class="button" onclick="checkout();" value="Check Out">
+		</div>
+	</div>
     </main>
 
     <footer>
