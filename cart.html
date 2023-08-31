@@ -5,6 +5,19 @@
     <meta charset="utf-8">
     <title>EZ Shop - Cart</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Additional CSS */
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        #clear-cart {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 
 <body id="container">
@@ -25,16 +38,14 @@
         <h1 style="color: black">Shopping Cart</h1>
         <div class="cart-container">
             <div class="cart-header">
+                <!-- Clear Cart button moved here -->
                 <button id="clear-cart">Clear Cart</button>
+                <!-- Checkout button moved here -->
+                <div class="button-container">
+                    <input type="button" class="button" onclick="checkout();" value="Check Out">
+                </div>
             </div>
         </div>
-        <!-- Cart items will be dynamically added here -->
-        <div class="cart-footer">
-            <h4 style="color: black; font-size: 20px;">Total Price:</h4>
-            <h4 id="total-price">$0.00</h4>
-        </div>
-        <!-- Checkout button -->
-        <input type="button" class="button" onclick="checkout();" value="Check Out">
     </main>
 
     <footer>
