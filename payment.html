@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html lang="en">
 
@@ -35,6 +36,7 @@
 		font-family: Arial, sans-serif;
 		text-align: center;
 		font-style: normal;
+		color: #ffffff;
 		}
 		form {
 		width:90%;
@@ -72,15 +74,19 @@
            	 width: auto; 
             	margin-right: 10px; 
         	}
-		.form-box {
-           	background-color: #fff; /* Background color of the boxes */
-            	border: 2px solid #4b5c4b; /* Border style */
-            	border-radius: 15px; /* Rounded corners */
-            	padding: 20px; /* Padding inside the boxes */
-            	margin: 20px auto; /* Center the boxes horizontally */
-            	width: 90%; /* Set the width of the boxes */
-           	max-width: 800px; /* Set a maximum width for larger screens */
-        	}
+		.form-section {
+            	border: 2px solid #4b5c4b;
+            	border-radius: 15px;
+            	padding: 20px;
+            	margin: 20px auto;
+            	width: 90%;
+            	max-width: 800px;
+       	 	}
+		.passcode-box {
+            	padding: 10px;
+            	border: 1px solid white;
+            	border-radius: 5px;
+       	 	}
 
     		#cvv, #expDate, #billingZip, #shippingZip {
        		width: 100px; 
@@ -114,8 +120,9 @@
 	<main>
 
 	<br>
-	<div class="form-box">
-	<form action="#" method="post" autocomplete="on">
+	
+	<form action="#" method="post" autocomplete="on" onsubmit="return handleSubmit();">
+	<div class="form-section">
 
 	<br>
 	<h2>Billing Information</h2>
@@ -216,28 +223,37 @@
         </div>
 	<br>
 
+	<div class="passcode-box">
+
 	<label>Enter your 4-digit promo code (optional)</label>
 	<input id="id1" type="number" min="1000" max="9999" name="passcode">
 	<button onclick="myFunction()" type="button">OK</button>
 	<p id="passcode"></p>
-	<!-- Horizontal fields container for Card Number and CVV -->
-	<script>
-	function myFunction() {
-	var inpObj = document.getElementById("id1");
-	if (inpObj.checkValidity() == false) {
-	document.getElementById("passcode").innerHTML =
-	inpObj.validationMessage;
-	} else {
-	document.getElementById("passcode").innerHTML = "Code Valid";
-	}
-	}
-	</script>
-	<br>
-	</form>
+
 	</div>
 
-	<div class="form-box">
-	<form action="#" method="post" autocomplete="on">
+	<script>
+
+	function myFunction() {
+    	var inpObj = document.getElementById("id1");
+    	if (inpObj.checkValidity() == false) {
+        document.getElementById("passcode").innerHTML = inpObj.validationMessage;
+    	} else {
+        alert("Discount applied successfully");
+    	}
+	}
+
+	function handleSubmit() {
+
+            alert("Payment successful. Confirmation email has been sent.");
+
+        }
+	</script>
+	
+	<br>
+	</div>
+
+	<div class="form-section">
 
 	<br>
 	<h2>Shipping Information</h2>
@@ -332,9 +348,9 @@
 	<input type="reset" value="Clear Form">
 	<br>
 	
-	</form>
 	</div>
 
+	</form>
 	</main>
 
 	<footer>
