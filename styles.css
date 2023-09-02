@@ -64,7 +64,7 @@ table tr th, table tr td {border: 1px solid #2a332a; padding: 50px; }
 
 .cart-item-price {font-weight: bold;}
 
-.cart-item-quantity {margin-right: 20px;}
+.cart-item-quantity {margin-right: 20px; margin-top: 20px;}
 
 .cart-item-quantity button {width: 30px; height: 30px; background-color: lightgray; border: none; font-weight: bold; cursor: pointer;}
 
@@ -72,10 +72,10 @@ table tr th, table tr td {border: 1px solid #2a332a; padding: 50px; }
 
 .cart-item-remove {width: 30px; height: 30px; background-color: red; color: white; border: none; font-weight: bold; cursor: pointer; margin-top: auto;}
 
-.cart-footer {display: flex; justify-content: flex-end; align-items: center; padding-right: 10%; padding-bottom: 10%; width: 80%; margin: auto;}
+.cart-footer {display: flex; justify-content: flex-end; align-items: center; padding-right: 10%; padding-bottom: 10%; width: 80%; margin: auto; font-size: 30px;}
 
-.cart-footer h2 {margin: 0;}
+.cart-footer h2 {margin:0;}
 
-.cart-item-subtotal {font-weight:bold; text-align:right; color:black; font-size:x-large; border:none; display:block; position:relative;}
+.cart-item-subtotal {font-weight:bold; text-align:right; color:black; font-size:x-large; border:none; display:block; position:relative; margin-top: 20px;}
 
 
