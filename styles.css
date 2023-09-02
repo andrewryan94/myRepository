@@ -56,7 +56,7 @@ table tr th, table tr td {border: 1px solid #2a332a; padding: 50px; }
 
 .cart-item {display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid black;margin: 10px;}
 
-.cart-item img {width: 270px; height: 300px;}
+.cart-item img {width: 150px; height: 150px;}
 
 .cart-item-info {flex-grow: 1;}
 
