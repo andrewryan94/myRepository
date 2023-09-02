@@ -60,11 +60,11 @@ table tr th, table tr td {border: 1px solid #2a332a; padding: 50px; }
 
 .cart-item img {width: 150px; height: 150px;}
 
-.cart-item-info {flex-grow: 1;}
+.cart-item-info {flex-grow: 1; margin-right: 20px;}
 
 .cart-item-price {font-weight: bold;}
 
-.cart-item-quantity {margin-right: 10px;}
+.cart-item-quantity {margin-right: 20px;}
 
 .cart-item-quantity button {width: 30px; height: 30px; background-color: lightgray; border: none; font-weight: bold; cursor: pointer;}
 
