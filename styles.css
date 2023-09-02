@@ -46,6 +46,8 @@ table tr th, table tr td {border: 1px solid #2a332a; padding: 50px; }
 
 .button:active {transform: scale(0.95);}
 
+.cart-button {text-align: right; margin-right: 150px;}
+
 .cart-container {width: 80%; margin: auto; display: flex; flex-wrap: wrap;}
 
 .cart-header {display: flex; justify-content: space-between; align-items: center; padding: 10px;}
@@ -75,6 +77,5 @@ table tr th, table tr td {border: 1px solid #2a332a; padding: 50px; }
 .cart-footer h2 {margin: 0;}
 
 .cart-item-subtotal {font-weight:bold; text-align:right; color:black; font-size:x-large; border:none; display:block; position:relative;}
-
 
 
